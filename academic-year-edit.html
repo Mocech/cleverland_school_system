@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Academic Year - Mwalimu School Management System</title>
+    <link rel="stylesheet" href="css/modern-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Modern Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">M</div>
+                <div>
+                    <div class="sidebar-title">Mwalimu</div>
+                    <div class="sidebar-subtitle">School Management</div>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Academic Management</div>
+                    <div class="nav-item">
+                        <a href="academic-year.html" class="nav-link">
+                            <i class="fas fa-calendar-alt nav-icon"></i>
+                            Academic Years
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="academic-year-edit.html" class="nav-link active">
+                            <i class="fas fa-edit nav-icon"></i>
+                            Edit Academic Year
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content" id="mainContent">
+            <!-- Modern Header -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="sidebar-toggle" id="sidebarToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div>
+                        <h1 class="page-title">Edit Academic Year</h1>
+                        <div class="breadcrumb">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                            <i class="fas fa-chevron-right"></i>
+                            <span>Academic Management</span>
+                            <i class="fas fa-chevron-right"></i>
+                            <span>Edit Academic Year</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="header-actions">
+                        <button class="btn btn-outline">
+                            <i class="fas fa-copy"></i>
+                            Duplicate Year
+                        </button>
+                        <button class="btn btn-danger">
+                            <i class="fas fa-trash"></i>
+                            Delete Year
+                        </button>
+                    </div>
+                    <div class="user-menu">
+                        <div class="user-avatar">AD</div>
+                        <div class="user-info">
+                            <h4>Admin User</h4>
+                            <p>System Administrator</p>
+                        </div>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Content -->
+            <div class="content">
+                <!-- Current Academic Year Overview -->
+                <div class="card mb-4 fade-in-up">
+                    <div class="card-header">
+                        <div>
+                            <h2 class="card-title">Academic Year 2024 Overview</h2>
+                            <p class="card-subtitle">Current status and statistics</p>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <span class="badge badge-success">Active</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+                            <div style="text-align: center; padding: 1.5rem; background: var(--primary-gradient); border-radius: var(--border-radius); color: white;">
+                                <i class="fas fa-calendar-alt" style="font-size: 2rem; margin-bottom: 1rem; opacity: 0.8;"></i>
+                                <h4 style="margin-bottom: 0.5rem;">320 Days</h4>
+                                <p style="opacity: 0.9; margin: 0;">Total Duration</p>
+                            </div>
+                            
+                            <div style="text-align: center; padding: 1.5rem; background: var(--success-gradient); border-radius: var(--border-radius); color: white;">
+                                <i class="fas fa-clock" style="font-size: 2rem; margin-bottom: 1rem; opacity: 0.8;"></i>
+                                <h4 style="margin-bottom: 0.5rem;">3 Terms</h4>
+                                <p style="opacity: 0.9; margin: 0;">Academic Terms</p>
+                            </div>
+                            
+                            <div style="text-align: center; padding: 1.5rem; background: var(--warning-gradient); border-radius: var(--border-radius); color: white;">
+                                <i class="fas fa-users" style="font-size: 2rem; margin-bottom: 1rem; opacity: 0.8;"></i>
+                                <h4 style="margin-bottom: 0.5rem;">1,247</h4>
+                                <p style="opacity: 0.9; margin: 0;">Enrolled Students</p>
+                            </div>
+                            
+                            <div style="text-align: center; padding: 1.5rem; background: var(--danger-gradient); border-radius: var(--border-radius); color: white;">
+                                <i class="fas fa-percentage" style="font-size: 2rem; margin-bottom: 1rem; opacity: 0.8;"></i>
+                                <h4 style="margin-bottom: 0.5rem;">45%</h4>
+                                <p style="opacity: 0.9; margin: 0;">Year Progress</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Edit Academic Year Form -->
+                <div class="card slide-in-right">
+                    <div class="card-header">
+                        <div>
+                            <h2 class="card-title">Edit Academic Year Details</h2>
+                            <p class="card-subtitle">Modify academic year information and settings</p>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <form id="editAcademicYearForm">
+                            <div class="form-section">
+                                <h3 class="form-section-title">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    Academic Year Information
+                                </h3>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label" for="editYear">
+                                            <i class="fas fa-calendar"></i>
+                                            Academic Year *
+                                        </label>
+                                        <input type="number" class="form-control" id="editYear" name="year" value="2024" required min="2020" max="2030">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="form-label" for="editYearStartDate">
+                                            <i class="fas fa-play"></i>
+                                            Start Date *
+                                        </label>
+                                        <input type="date" class="form-control" id="editYearStartDate" name="startDate" value="2024-01-15" required>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="form-label" for="editYearEndDate">
+                                            <i class="fas fa-stop"></i>
+                                            End Date *
+                                        </label>
+                                        <input type="date" class="form-control" id="editYearEndDate" name="endDate" value="2024-11-30" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label" for="editYearDescription">
+                                            <i class="fas fa-align-left"></i>
+                                            Description
+                                        </label>
+                                        <textarea class="form-control" id="editYearDescription" name="description" rows="3">Academic year 2024 with focus on improved learning outcomes and student development.</textarea>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <div style="display: flex; align-items: center; gap: 1rem;">
+                                            <input type="checkbox" id="editIsActiveYear" name="isActive" checked style="width: auto;">
+                                            <label for="editIsActiveYear" class="form-label" style="margin: 0;">
+                                                <i class="fas fa-toggle-on"></i>
+                                                Set as Active Academic Year
+                                            </label>
+                                        </div>
+                                        <small class="form-help">Only one academic year can be active at a time</small>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Terms in this Academic Year -->
+                            <div class="form-section">
+                                <h3 class="form-section-title">
+                                    <i class="fas fa-clock"></i>
+                                    Terms in this Academic Year
+                                </h3>
+                                
+                                <div class="table-container">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Term</th>
+                                                <th>Duration</th>
+                                                <th>School Days</th>
+                                                <th>Status</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><strong>Term 1</strong></td>
+                                                <td>Jan 15 - Apr 12, 2024</td>
+                                                <td>65 days</td>
+                                                <td><span class="badge badge-success">Active</span></td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm">
+                                                        <i class="fas fa-edit"></i>
+                                                        Edit
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Term 2</strong></td>
+                                                <td>May 6 - Aug 9, 2024</td>
+                                                <td>68 days</td>
+                                                <td><span class="badge badge-warning">Upcoming</span></td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm">
+                                                        <i class="fas fa-edit"></i>
+                                                        Edit
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Term 3</strong></td>
+                                                <td>Sep 2 - Nov 29, 2024</td>
+                                                <td>62 days</td>
+                                                <td><span class="badge badge-secondary">Upcoming</span></td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm">
+                                                        <i class="fas fa-edit"></i>
+                                                        Edit
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                                <div style="margin-top: 1rem;">
+                                    <button type="button" class="btn btn-outline">
+                                        <i class="fas fa-plus"></i>
+                                        Add New Term
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- Form Actions -->
+                            <div class="d-flex gap-2 justify-content-between" style="margin-top: 3rem;">
+                                <button type="button" class="btn btn-outline" onclick="history.back()">
+                                    <i class="fas fa-arrow-left"></i>
+                                    Back to Academic Years
+                                </button>
+                                <div class="d-flex gap-2">
+                                    <button type="button" class="btn btn-secondary">
+                                        <i class="fas fa-save"></i>
+                                        Save as Draft
+                                    </button>
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fas fa-check"></i>
+                                        Update Academic Year
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="assets/js/modern-main.js"></script>
+    <script src="assets/js/academic-year-edit.js"></script>
+</body>
+</html>

@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Process Payments - Mwalimu School Management System</title>
+    <link rel="stylesheet" href="css/modern-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Modern Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">M</div>
+                <div>
+                    <div class="sidebar-title">Mwalimu</div>
+                    <div class="sidebar-subtitle">School Management</div>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Main</div>
+                    <div class="nav-item">
+                        <a href="index.html" class="nav-link">
+                            <i class="fas fa-chart-pie nav-icon"></i>
+                            Dashboard
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">Fee Management</div>
+                    <div class="nav-item">
+                        <a href="payments.html" class="nav-link active">
+                            <i class="fas fa-credit-card nav-icon"></i>
+                            Process Payments
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="payment-edit.html" class="nav-link">
+                            <i class="fas fa-receipt nav-icon"></i>
+                            Edit Payments
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content" id="mainContent">
+            <!-- Modern Header -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="sidebar-toggle" id="sidebarToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div>
+                        <h1 class="page-title">Process Payments</h1>
+                        <div class="breadcrumb">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                            <i class="fas fa-chevron-right"></i>
+                            <span>Fee Management</span>
+                            <i class="fas fa-chevron-right"></i>
+                            <span>Payments</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="header-actions">
+                        <button class="btn btn-outline">
+                            <i class="fas fa-history"></i>
+                            Payment History
+                        </button>
+                        <button class="btn btn-secondary">
+                            <i class="fas fa-print"></i>
+                            Print Receipt
+                        </button>
+                    </div>
+                    <div class="user-menu">
+                        <div class="user-avatar">AD</div>
+                        <div class="user-info">
+                            <h4>Admin User</h4>
+                            <p>System Administrator</p>
+                        </div>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Content -->
+            <div class="content">
+                <!-- Student Search -->
+                <div class="card mb-4 fade-in-up">
+                    <div class="card-header">
+                        <div>
+                            <h2 class="card-title">Find Student</h2>
+                            <p class="card-subtitle">Search for student by admission number or name</p>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-row">
+                            <div class="form-group" style="flex: 1;">
+                                <label class="form-label">
+                                    <i class="fas fa-search"></i>
+                                    Search Student
+                                </label>
+                                <input type="text" class="form-control" id="studentSearch" placeholder="Enter admission number (e.g., CV001) or student name">
+                            </div>
+                            
+                            <div class="form-group" style="display: flex; align-items: end; gap: 1rem;">
+                                <button type="button" class="btn btn-primary" id="searchStudentBtn">
+                                    <i class="fas fa-search"></i>
+                                    Search Student
+                                </button>
+                                <button type="button" class="btn btn-outline" id="clearSearchBtn">
+                                    <i class="fas fa-times"></i>
+                                    Clear
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Search Results -->
+                <div class="card mb-4 slide-in-right" id="searchResultsCard">
+                    <div class="card-header">
+                        <div>
+                            <h2 class="card-title">Search Results</h2>
+                            <p class="card-subtitle">Select a student to view payment details</p>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <span class="badge badge-info">3 Results Found</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-container">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Admission No.</th>
+                                        <th>Student Name</th>
+                                        <th>Class</th>
+                                        <th>Status</th>
+                                        <th>Outstanding</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>CV001</strong></td>
+                                        <td>
+                                            <div>
+                                                <strong>John Doe</strong>
+                                                <br>
+                                                <small style="color: var(--text-secondary);">DOB: 15/03/2010</small>
+                                            </div>
+                                        </td>
+                                        <td>Form 2A</td>
+                                        <td><span class="badge badge-success">Active</span></td>
+                                        <td style="color: var(--danger-color); font-weight: bold;">KSh 15,000</td>
+                                        <td>
+                                            <button class="btn btn-primary btn-sm select-student-btn" data-admission="CV001">
+                                                <i class="fas fa-arrow-right"></i>
+                                                Select
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>CV002</strong></td>
+                                        <td>
+                                            <div>
+                                                <strong>Jane Smith</strong>
+                                                <br>
+                                                <small style="color: var(--text-secondary);">DOB: 22/07/2009</small>
+                                            </div>
+                                        </td>
+                                        <td>Form 3B</td>
+                                        <td><span class="badge badge-success">Active</span></td>
+                                        <td style="color: var(--success-color); font-weight: bold;">KSh 0</td>
+                                        <td>
+                                            <button class="btn btn-primary btn-sm select-student-btn" data-admission="CV002">
+                                                <i class="fas fa-arrow-right"></i>
+                                                Select
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>CV003</strong></td>
+                                        <td>
+                                            <div>
+                                                <strong>Mike Johnson</strong>
+                                                <br>
+                                                <small style="color: var(--text-secondary);">DOB: 10/11/2008</small>
+                                            </div>
+                                        </td>
+                                        <td>Form 4A</td>
+                                        <td><span class="badge badge-success">Active</span></td>
+                                        <td style="color: var(--warning-color); font-weight: bold;">KSh 8,500</td>
+                                        <td>
+                                            <button class="btn btn-primary btn-sm select-student-btn" data-admission="CV003">
+                                                <i class="fas fa-arrow-right"></i>
+                                                Select
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Student Details -->
+                <div class="card mb-4 slide-in-right" id="studentDetailsCard" style="display: none;">
+                    <div class="card-header">
+                        <div>
+                            <h2 class="card-title">Student Details</h2>
+                            <p class="card-subtitle">Verify student information before processing payment</p>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <span class="badge badge-success">Active Student</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                            <div>
+                                <h4 style="margin-bottom: 1rem; color: var(--primary-color);">
+                                    <i class="fas fa-user"></i>
+                                    Personal Information
+                                </h4>
+                                <div style="background: rgba(102, 126, 234, 0.05); padding: 1.5rem; border-radius: var(--border-radius);">
+                                    <p><strong>Name:</strong> John Doe</p>
+                                    <p><strong>Admission No:</strong> CV001</p>
+                                    <p><strong>Date of Birth:</strong> 15/03/2010</p>
+                                    <p><strong>Gender:</strong> Male</p>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h4 style="margin-bottom: 1rem; color: var(--success-color);">
+                                    <i class="fas fa-graduation-cap"></i>
+                                    Academic Information
+                                </h4>
+                                <div style="background: rgba(34, 197, 94, 0.05); padding: 1.5rem; border-radius: var(--border-radius);">
+                                    <p><strong>Class:</strong> Form 2A</p>
+                                    <p><strong>Stream:</strong> Science</p>
+                                    <p><strong>Academic Year:</strong> 2024</p>
+                                    <p><strong>Term:</strong> Term 1</p>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h4 style="margin-bottom: 1rem; color: var(--warning-color);">
+                                    <i class="fas fa-phone"></i>
+                                    Contact Information
+                                </h4>
+                                <div style="background: rgba(245, 158, 11, 0.05); padding: 1.5rem; border-radius: var(--border-radius);">
+                                    <p><strong>Parent/Guardian:</strong> Mary Doe</p>
+                                    <p><strong>Phone:</strong> +254 712 345 678</p>
+                                    <p><strong>Email:</strong> mary.doe@email.com</p>
+                                    <p><strong>Address:</strong> Nairobi, Kenya</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Outstanding Fees -->
+                <div class="card mb-4 fade-in-up" id="outstandingFeesCard" style="display: none;">
+                    <div class="card-header">
+                        <div>
+                            <h2 class="card-title">Outstanding Fees</h2>
+                            <p class="card-subtitle">Current term fee structure and payment status</p>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <span class="badge badge-warning" id="totalOutstandingBadge">KSh 15,000</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-container">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Fee Category</th>
+                                        <th>Type</th>
+                                        <th>Amount Due</th>
+                                        <th>Amount Paid</th>
+                                        <th>Balance</th>
+                                        <th>Status</th>
+                                        <th>Select</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Tuition Fee</strong></td>
+                                        <td><span class="badge badge-primary">Mandatory</span></td>
+                                        <td>KSh 12,000</td>
+                                        <td>KSh 2,000</td>
+                                        <td style="color: var(--danger-color); font-weight: bold;">KSh 10,000</td>
+                                        <td><span class="badge badge-danger">Outstanding</span></td>
+                                        <td>
+                                            <input type="checkbox" class="fee-checkbox" data-category="tuition" data-balance="10000" checked>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Library Fee</strong></td>
+                                        <td><span class="badge badge-secondary">Optional</span></td>
+                                        <td>KSh 2,000</td>
+                                        <td>KSh 0</td>
+                                        <td style="color: var(--danger-color); font-weight: bold;">KSh 2,000</td>
+                                        <td><span class="badge badge-danger">Outstanding</span></td>
+                                        <td>
+                                            <input type="checkbox" class="fee-checkbox" data-category="library" data-balance="2000" checked>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Lab Fee</strong></td>
+                                        <td><span class="badge badge-secondary">Optional</span></td>
+                                        <td>KSh 3,000</td>
+                                        <td>KSh 0</td>
+                                        <td style="color: var(--danger-color); font-weight: bold;">KSh 3,000</td>
+                                        <td><span class="badge badge-danger">Outstanding</span></td>
+                                        <td>
+                                            <input type="checkbox" class="fee-checkbox" data-category="lab" data-balance="3000" checked>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Sports Fee</strong></td>
+                                        <td><span class="badge badge-secondary">Optional</span></td>
+                                        <td>KSh 1,500</td>
+                                        <td>KSh 1,500</td>
+                                        <td style="color: var(--success-color); font-weight: bold;">KSh 0</td>
+                                        <td><span class="badge badge-success">Paid</span></td>
+                                        <td>
+                                            <input type="checkbox" class="fee-checkbox" data-category="sports" data-balance="0" disabled>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="d-flex justify-content-between align-items-center" style="margin-top: 2rem; padding: 1.5rem; background: rgba(102, 126, 234, 0.05); border-radius: var(--border-radius);">
+                            <div>
+                                <h4 style="margin-bottom: 0.5rem;">Total Outstanding: <span id="totalOutstanding" style="color: var(--danger-color);">KSh 15,000</span></h4>
+                                <p style="color: var(--text-secondary); margin: 0;">Select payment type to proceed</p>
+                            </div>
+                            <div class="d-flex gap-2">
+                                <button type="button" class="btn btn-outline" id="partialPaymentBtn">
+                                    <i class="fas fa-hand-holding-usd"></i>
+                                    Partial Payment
+                                </button>
+                                <button type="button" class="btn btn-primary" id="fullPaymentBtn">
+                                    <i class="fas fa-credit-card"></i>
+                                    Full Payment
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Payment Form -->
+                <div class="card slide-in-right" id="paymentFormCard" style="display: none;">
+                    <div class="card-header">
+                        <div>
+                            <h2 class="card-title" id="paymentFormTitle">Process Payment</h2>
+                            <p class="card-subtitle">Enter payment details and process transaction</p>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <span class="badge badge-primary" id="paymentTypeBadge">Full Payment</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <form id="paymentForm">
+                            <!-- Payment Details Section -->
+                            <div class="form-section">
+                                <h3 class="form-section-title">
+                                    <i class="fas fa-credit-card"></i>
+                                    Payment Details
+                                </h3>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label">
+                                            <i class="fas fa-money-bill-wave"></i>
+                                            Payment Amount *
+                                        </label>
+                                        <input type="number" class="form-control" id="paymentAmount" name="paymentAmount" min="0" step="0.01" value="15000" required>
+                                        <small style="color: var(--text-secondary); margin-top: 0.5rem; display: block;">
+                                            Enter the amount being paid
+                                        </small>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="form-label">
+                                            <i class="fas fa-wallet"></i>
+                                            Payment Method *
+                                        </label>
+                                        <select class="form-control" id="paymentMethod" name="paymentMethod" required>
+                                            <option value="">Select Payment Method</option>
+                                            <option value="Cash">Cash</option>
+                                            <option value="M-Pesa">M-Pesa</option>
+                                            <option value="Bank Transfer">Bank Transfer</option>
+                                            <option value="Cheque">Cheque</option>
+                                            <option value="Card">Debit/Credit Card</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label">
+                                            <i class="fas fa-receipt"></i>
+                                            Receipt Number
+                                        </label>
+                                        <input type="text" class="form-control" id="receiptNumber" name="receiptNumber" placeholder="Auto-generated if left blank">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="form-label">
+                                            <i class="fas fa-calendar"></i>
+                                            Payment Date *
+                                        </label>
+                                        <input type="date" class="form-control" id="paymentDate" name="paymentDate" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label">
+                                            <i class="fas fa-sticky-note"></i>
+                                            Payment Notes
+                                        </label>
+                                        <textarea class="form-control" id="paymentNotes" name="paymentNotes" rows="3" placeholder="Optional payment notes or reference"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Form Actions -->
+                            <div class="d-flex gap-2 justify-content-between" style="margin-top: 3rem;">
+                                <button type="button" class="btn btn-outline" id="cancelPaymentBtn">
+                                    <i class="fas fa-times"></i>
+                                    Cancel
+                                </button>
+                                <div class="d-flex gap-2">
+                                    <button type="button" class="btn btn-secondary" id="previewPaymentBtn">
+                                        <i class="fas fa-eye"></i>
+                                        Preview
+                                    </button>
+                                    <button type="submit" class="btn btn-success">
+                                        <i class="fas fa-check"></i>
+                                        Process Payment
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="assets/js/modern-main.js"></script>
+    <script src="assets/js/payments.js"></script>
+</body>
+</html>

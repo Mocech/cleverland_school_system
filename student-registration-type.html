@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Type - Mwalimu School Management System</title>
+    <link rel="stylesheet" href="css/modern-style.css">
+    <link rel="stylesheet" href="css/registration-type.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Modern Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">M</div>
+                <div>
+                    <div class="sidebar-title">Mwalimu</div>
+                    <div class="sidebar-subtitle">School Management</div>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Main</div>
+                    <div class="nav-item">
+                        <a href="index.html" class="nav-link">
+                            <i class="fas fa-chart-pie nav-icon"></i>
+                            Dashboard
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">Student Management</div>
+                    <div class="nav-item">
+                        <a href="student-registration-type.html" class="nav-link active">
+                            <i class="fas fa-user-plus nav-icon"></i>
+                            Register Student
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="student-search.html" class="nav-link">
+                            <i class="fas fa-search nav-icon"></i>
+                            Find Student
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content" id="mainContent">
+            <!-- Modern Header -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="sidebar-toggle" id="sidebarToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div>
+                        <h1 class="page-title">Student Registration</h1>
+                        <div class="breadcrumb">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                            <i class="fas fa-chevron-right"></i>
+                            <span>Students</span>
+                            <i class="fas fa-chevron-right"></i>
+                            <span>Registration Type</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="user-menu">
+                        <div class="user-avatar">AD</div>
+                        <div class="user-info">
+                            <h4>Admin User</h4>
+                            <p>System Administrator</p>
+                        </div>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Content -->
+            <div class="content">
+                <!-- Registration Type Selection -->
+                <div class="registration-container">
+                    <div class="registration-header">
+                        <h2>Choose Registration Type</h2>
+                        <p>Select the appropriate registration type for the student</p>
+                    </div>
+                    
+                    <div class="registration-options">
+                        <!-- New Student Option -->
+                        <div class="registration-option" onclick="window.location.href='student-registration-new.html'">
+                            <div class="option-icon new-student">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+                            <div class="option-content">
+                                <h3>New Student</h3>
+                                <p>Register a student joining the school for the first time</p>
+                                <div class="option-features">
+                                    <div class="feature">
+                                        <i class="fas fa-check"></i>
+                                        <span>Admission number automatically generated</span>
+                                    </div>
+                                    <div class="feature">
+                                        <i class="fas fa-check"></i>
+                                        <span>Complete student profile creation</span>
+                                    </div>
+                                    <div class="feature">
+                                        <i class="fas fa-check"></i>
+                                        <span>Guardian information required</span>
+                                    </div>
+                                </div>
+                                <div class="option-button">
+                                    <span>Register New Student</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Existing Student Option -->
+                        <div class="registration-option" onclick="window.location.href='student-registration-existing.html'">
+                            <div class="option-icon existing-student">
+                                <i class="fas fa-user-edit"></i>
+                            </div>
+                            <div class="option-content">
+                                <h3>Existing Student</h3>
+                                <p>Register a student who was already in the school before the system</p>
+                                <div class="option-features">
+                                    <div class="feature">
+                                        <i class="fas fa-check"></i>
+                                        <span>Admission number entered manually</span>
+                                    </div>
+                                    <div class="feature">
+                                        <i class="fas fa-check"></i>
+                                        <span>Historical data integration</span>
+                                    </div>
+                                    <div class="feature">
+                                        <i class="fas fa-check"></i>
+                                        <span>Previous academic records</span>
+                                    </div>
+                                </div>
+                                <div class="option-button">
+                                    <span>Register Existing Student</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Information Section -->
+                    <div class="info-section">
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Important Information</h4>
+                                <ul>
+                                    <li><strong>New Students:</strong> Use this option for students who are joining your school for the first time. The system will automatically generate a unique admission number.</li>
+                                    <li><strong>Existing Students:</strong> Use this option for students who were already enrolled before implementing this system. You'll need to enter their existing admission number manually.</li>
+                                    <li><strong>Data Validation:</strong> All student information will be validated to ensure accuracy and prevent duplicates.</li>
+                                    <li><strong>Guardian Information:</strong> Complete guardian details are required for both registration types.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="assets/js/modern-main.js"></script>
+    <script src="assets/js/registration-type.js"></script>
+</body>
+</html>

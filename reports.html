@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Reports - Mwalimu School Management System</title>
+    <link rel="stylesheet" href="css/modern-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Modern Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">M</div>
+                <div>
+                    <div class="sidebar-title">Mwalimu</div>
+                    <div class="sidebar-subtitle">School Management</div>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Main</div>
+                    <div class="nav-item">
+                        <a href="index.html" class="nav-link">
+                            <i class="fas fa-chart-pie nav-icon"></i>
+                            Dashboard
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">Academic Management</div>
+                    <div class="nav-item">
+                        <a href="academic-year.html" class="nav-link">
+                            <i class="fas fa-calendar-alt nav-icon"></i>
+                            Academic Years
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="terms.html" class="nav-link">
+                            <i class="fas fa-clock nav-icon"></i>
+                            Terms Management
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">Student Management</div>
+                    <div class="nav-item">
+                        <a href="student-registration.html" class="nav-link">
+                            <i class="fas fa-user-plus nav-icon"></i>
+                            Register Student
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="student-search.html" class="nav-link">
+                            <i class="fas fa-search nav-icon"></i>
+                            Find Student
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="student-profile.html" class="nav-link">
+                            <i class="fas fa-id-card nav-icon"></i>
+                            Student Profiles
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="enrollment-edit.html" class="nav-link">
+                            <i class="fas fa-edit nav-icon"></i>
+                            Edit Enrollment
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">Fee Management</div>
+                    <div class="nav-item">
+                        <a href="fee-categories.html" class="nav-link">
+                            <i class="fas fa-tags nav-icon"></i>
+                            Fee Categories
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="fee-structure.html" class="nav-link">
+                            <i class="fas fa-money-bill-wave nav-icon"></i>
+                            Fee Structure
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="payments.html" class="nav-link">
+                            <i class="fas fa-credit-card nav-icon"></i>
+                            Process Payments
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="payment-edit.html" class="nav-link">
+                            <i class="fas fa-receipt nav-icon"></i>
+                            Edit Payments
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">Reports & Analytics</div>
+                    <div class="nav-item">
+                        <a href="reports.html" class="nav-link active">
+                            <i class="fas fa-chart-bar nav-icon"></i>
+                            Financial Reports
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="analytics.html" class="nav-link">
+                            <i class="fas fa-analytics nav-icon"></i>
+                            Analytics
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">System</div>
+                    <div class="nav-item">
+                        <a href="settings.html" class="nav-link">
+                            <i class="fas fa-cog nav-icon"></i>
+                            Settings
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content" id="mainContent">
+            <!-- Modern Header -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="sidebar-toggle" id="sidebarToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div>
+                        <h1 class="page-title">Financial Reports</h1>
+                        <div class="breadcrumb">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                            <i class="fas fa-chevron-right"></i>
+                            <span>Reports</span>
+                            <i class="fas fa-chevron-right"></i>
+                            <span>Financial</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="header-actions">
+                        <button class="btn btn-outline">
+                            <i class="fas fa-calendar"></i>
+                            Date Range
+                        </button>
+                        <button class="btn btn-secondary">
+                            <i class="fas fa-download"></i>
+                            Export All
+                        </button>
+                        <button class="btn btn-primary">
+                            <i class="fas fa-print"></i>
+                            Print Reports
+                        </button>
+                    </div>
+                    <div class="user-menu">
+                        <div class="user-avatar">AD</div>
+                        <div class="user-info">
+                            <h4>Admin User</h4>
+                            <p>System Administrator</p>
+                        </div>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Content -->
+            <div class="content">
+                <!-- Report Filters -->
+                <div class="card mb-4 fade-in-up">
+                    <div class="card-header">
+                        <div>
+                            <h2 class="card-title">Report Filters</h2>
+                            <p class="card-subtitle">Customize your financial reports</p>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    Academic Year
+                                </label>
+                                <select class="form-control" id="reportYear">
+                                    <option value="2024" selected>2024</option>
+                                    <option value="2023">2023</option>
+                                    <option value="2022">2022</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <i class="fas fa-clock"></i>
+                                    Term
+                                </label>
+                                <select class="form-control" id="reportTerm">
+                                    <option value="">All Terms</option>
+                                    <option value="Term 1" selected>Term 1</option>
+                                    <option value="Term 2">Term 2</option>
+                                    <option value="Term 3">Term 3</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <i class="fas fa-layer-group"></i>
+                                    Grade
+                                </label>
+                                <select class="form-control" id="reportGrade">
+                                    <option value="">All Grades</option>
+                                    <option value="Grade 1">Grade 1</option>
+                                    <option value="Grade 2">Grade 2</option>
+                                    <option value="Grade 3">Grade 3</option>
+                                    <option value="Grade 4">Grade 4</option>
+                                    <option value="Grade 5">Grade 5</option>
+                                    <option value="Grade 6">Grade 6</option>
+                                    <option value="Grade 7">Grade 7</option>
+                                    <option value="Grade 8">Grade 8</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group" style="display: flex; align-items: end;">
+                                <button type="button" class="btn btn-primary" id="generateReportsBtn">
+                                    <i class="fas fa-chart-bar"></i>
+                                    Generate Reports
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Financial Overview -->
+                <div class="stats-grid slide-in-right">
+                    <div class="stat-card">
+                        <div class="stat-icon success">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="totalCollected">KSh 2.8M</h3>
+                            <p>Total Collected</p>
+                            <div class="stat-trend trend-up">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>+15% from last term</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon warning">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="totalOutstanding">KSh 650K</h3>
+                            <p>Outstanding Fees</p>
+                            <div class="stat-trend trend-down">
+                                <i class="fas fa-arrow-down"></i>
+                                <span>-8% from last month</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon primary">
+                            <i class="fas fa-percentage"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="collectionRate">81.2%</h3>
+                            <p>Collection Rate</p>
+                            <div class="stat-trend trend-up">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>+3% improvement</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon danger">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="studentsWithBalances">234</h3>
+                            <p>Students with Balances</p>
+                            <div class="stat-trend trend-down">
+                                <i class="fas fa-arrow-down"></i>
+                                <span>-12 from last week</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Charts Section -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+                    <!-- Collection Trends Chart -->
+                    <div class="card fade-in-up">
+                        <div class="card-header">
+                            <div>
+                                <h2 class="card-title">Collection Trends</h2>
+                                <p class="card-subtitle">Monthly fee collection over time</p>
+                            </div>
+                            <button class="btn btn-outline btn-sm">
+                                <i class="fas fa-download"></i>
+                                Export
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="collectionTrendsChart" width="400" height="200"></canvas>
+                        </div>
+                    </div>
+                    
+                    <!-- Fee Categories Breakdown -->
+                    <div class="card fade-in-up">
+                        <div class="card-header">
+                            <div>
+                                <h2 class="card-title">Fee Categories</h2>
+                                <p class="card-subtitle">Collection by category</p>
+                            </div>
+                            <button class="btn btn-outline btn-sm">
+                                <i class="fas fa-download"></i>
+                                Export
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="categoriesChart" width="400" height="200"></canvas>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Grade-wise Collection Report -->
+                <div class="card mb-4 slide-in-right">
+                    <div class="card-header">
+                        <div>
+                            <h2 class="card-title">Grade-wise Collection Report</h2>
+                            <p class="card-subtitle">Detailed collection status by grade</p>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <button class="btn btn-outline btn-sm">
+                                <i class="fas fa-chart-bar"></i>
+                                View Chart
+                            </button>
+                            <button class="btn btn-outline btn-sm">
+                                <i class="fas fa-download"></i>
+                                Export
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-container">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Grade</th>
+                                        <th>Students</th>
+                                        <th>Expected Amount</th>
+                                        <th>Collected Amount</th>
+                                        <th>Outstanding</th>
+                                        <th>Collection Rate</th>
+                                        <th>Avg. per Student</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="gradeReportTable">
+                                    <!-- Data will be populated by JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Payment Methods Report -->
+                <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem;">
+                    <!-- Recent Payments -->
+                    <div class="card fade-in-up">
+                        <div class="card-header">
+                            <div>
+                                <h2 class="card-title">Recent Payments</h2>
+                                <p class="card-subtitle">Latest payment transactions</p>
+                            </div>
+                            <button class="btn btn-outline btn-sm">
+                                <i class="fas fa-list"></i>
+                                View All
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-container">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>Student</th>
+                                            <th>Amount</th>
+                                            <th>Method</th>
+                                            <th>Receipt</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="recentPaymentsTable">
+                                        <!-- Data will be populated by JavaScript -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Payment Methods Breakdown -->
+                    <div class="card fade-in-up">
+                        <div class="card-header">
+                            <div>
+                                <h2 class="card-title">Payment Methods</h2>
+                                <p class="card-subtitle">Collection by method</p>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="paymentMethodsChart" width="300" height="300"></canvas>
+                            
+                            <div style="margin-top: 2rem;">
+                                <div style="display: flex; justify-content: between; align-items: center; margin-bottom: 1rem; padding: 1rem; background: rgba(102, 126, 234, 0.05); border-radius: var(--border-radius-sm);">
+                                    <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                        <div style="width: 12px; height: 12px; background: #667eea; border-radius: 50%;"></div>
+                                        <span>M-Pesa</span>
+                                    </div>
+                                    <strong>45%</strong>
+                                </div>
+                                
+                                <div style="display: flex; justify-content: between; align-items: center; margin-bottom: 1rem; padding: 1rem; background: rgba(79, 172, 254, 0.05); border-radius: var(--border-radius-sm);">
+                                    <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                        <div style="width: 12px; height: 12px; background: #4facfe; border-radius: 50%;"></div>
+                                        <span>Cash</span>
+                                    </div>
+                                    <strong>35%</strong>
+                                </div>
+                                
+                                <div style="display: flex; justify-content: between; align-items: center; margin-bottom: 1rem; padding: 1rem; background: rgba(67, 233, 123, 0.05); border-radius: var(--border-radius-sm);">
+                                    <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                        <div style="width: 12px; height: 12px; background: #43e97b; border-radius: 50%;"></div>
+                                        <span>Bank Transfer</span>
+                                    </div>
+                                    <strong>20%</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="assets/js/modern-main.js"></script>
+    <script src="assets/js/reports.js"></script>
+</body>
+</html>

@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Mwalimu School Management System</title>
+    <link rel="stylesheet" href="css/modern-style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Modern Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">M</div>
+                <div>
+                    <div class="sidebar-title">Mwalimu</div>
+                    <div class="sidebar-subtitle">School Management</div>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Main</div>
+                    <div class="nav-item">
+                        <a href="index.html" class="nav-link active">
+                            <i class="fas fa-chart-pie nav-icon"></i>
+                            Dashboard
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">Academic Management</div>
+                    <div class="nav-item">
+                        <a href="academic-year.html" class="nav-link">
+                            <i class="fas fa-calendar-alt nav-icon"></i>
+                            Academic Years
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="terms.html" class="nav-link">
+                            <i class="fas fa-clock nav-icon"></i>
+                            Terms Management
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">Student Management</div>
+                    <div class="nav-item">
+                        <a href="student-registration-type.html" class="nav-link">
+                            <i class="fas fa-user-plus nav-icon"></i>
+                            Register Student
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="student-search.html" class="nav-link">
+                            <i class="fas fa-search nav-icon"></i>
+                            Find Student
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="student-profile.html" class="nav-link">
+                            <i class="fas fa-id-card nav-icon"></i>
+                            Student Profile
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">Fee Management</div>
+                    <div class="nav-item">
+                        <a href="fee-categories.html" class="nav-link">
+                            <i class="fas fa-tags nav-icon"></i>
+                            Fee Categories
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="fee-structure.html" class="nav-link">
+                            <i class="fas fa-money-bill-wave nav-icon"></i>
+                            Fee Structure
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="payments.html" class="nav-link">
+                            <i class="fas fa-credit-card nav-icon"></i>
+                            Process Payments
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="payment-edit.html" class="nav-link">
+                            <i class="fas fa-receipt nav-icon"></i>
+                            Edit Payments
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">Reports & Analytics</div>
+                    <div class="nav-item">
+                        <a href="reports.html" class="nav-link">
+                            <i class="fas fa-chart-bar nav-icon"></i>
+                            Financial Reports
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="analytics.html" class="nav-link">
+                            <i class="fas fa-analytics nav-icon"></i>
+                            Analytics
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">System</div>
+                    <div class="nav-item">
+                        <a href="settings.html" class="nav-link">
+                            <i class="fas fa-cog nav-icon"></i>
+                            Settings
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content" id="mainContent">
+            <!-- Modern Header -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="sidebar-toggle" id="sidebarToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div>
+                        <h1 class="page-title">Dashboard</h1>
+                        <div class="breadcrumb">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                            <i class="fas fa-chevron-right"></i>
+                            <span>Dashboard</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="header-actions">
+                        <button class="btn btn-primary">
+                            <i class="fas fa-plus"></i>
+                            Quick Add
+                        </button>
+                    </div>
+                    <div class="user-menu">
+                        <div class="user-avatar">AD</div>
+                        <div class="user-info">
+                            <h4>Admin User</h4>
+                            <p>System Administrator</p>
+                        </div>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Content -->
+            <div class="content">
+                <!-- Stats Overview -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon primary">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>1,247</h3>
+                            <p>Total Students</p>
+                            <div class="stat-trend trend-up">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>+12% from last term</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon success">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>KSh 2.8M</h3>
+                            <p>Total Collected</p>
+                            <div class="stat-trend trend-up">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>+8% this term</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon warning">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>KSh 650K</h3>
+                            <p>Outstanding Fees</p>
+                            <div class="stat-trend trend-down">
+                                <i class="fas fa-arrow-down"></i>
+                                <span>-5% from last month</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon danger">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>24</h3>
+                            <p>Active Classes</p>
+                            <div class="stat-trend">
+                                <i class="fas fa-minus"></i>
+                                <span>No change</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quick Actions -->
+                <div class="action-grid slide-in-right">
+                    <a href="student-registration.html" class="action-card">
+                        <div class="action-icon primary">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                        <div class="action-title">Register Student</div>
+                        <div class="action-description">Add new or existing students to the system</div>
+                    </a>
+                    
+                    <a href="payments.html" class="action-card">
+                        <div class="action-icon success">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <div class="action-title">Process Payment</div>
+                        <div class="action-description">Record student fee payments</div>
+                    </a>
+                    
+                    <a href="fee-structure.html" class="action-card">
+                        <div class="action-icon warning">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <div class="action-title">Fee Structure</div>
+                        <div class="action-description">Setup and manage fee categories</div>
+                    </a>
+                    
+                    <a href="reports.html" class="action-card">
+                        <div class="action-icon danger">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="action-title">View Reports</div>
+                        <div class="action-description">Generate financial and academic reports</div>
+                    </a>
+                </div>
+                
+                <!-- Class Overview -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <div>
+                            <h2 class="card-title">Class Overview</h2>
+                            <p class="card-subtitle">Current term fee collection status by grade</p>
+                        </div>
+                        <button class="btn btn-outline btn-sm">
+                            <i class="fas fa-download"></i>
+                            Export
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-container">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Grade</th>
+                                        <th>Enrolled</th>
+                                        <th>Fully Paid</th>
+                                        <th>Partial Payment</th>
+                                        <th>Outstanding</th>
+                                        <th>Collection Rate</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Grade 1</strong></td>
+                                        <td>52</td>
+                                        <td><span class="badge badge-success">45</span></td>
+                                        <td><span class="badge badge-warning">5</span></td>
+                                        <td><span class="badge badge-danger">2</span></td>
+                                        <td>
+                                            <div class="progress-container">
+                                                <div class="progress-bar" style="width: 86.5%"></div>
+                                                <span class="progress-text">86.5%</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="action-buttons">
+                                                <button class="btn btn-primary btn-sm">
+                                                    <i class="fas fa-eye"></i>
+                                                </button>
+                                                <button class="btn btn-outline btn-sm">
+                                                    <i class="fas fa-edit"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Grade 2</strong></td>
+                                        <td>48</td>
+                                        <td><span class="badge badge-success">41</span></td>
+                                        <td><span class="badge badge-warning">4</span></td>
+                                        <td><span class="badge badge-danger">3</span></td>
+                                        <td>
+                                            <div class="progress-container">
+                                                <div class="progress-bar" style="width: 85.4%"></div>
+                                                <span class="progress-text">85.4%</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="action-buttons">
+                                                <button class="btn btn-primary btn-sm">
+                                                    <i class="fas fa-eye"></i>
+                                                </button>
+                                                <button class="btn btn-outline btn-sm">
+                                                    <i class="fas fa-edit"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Grade 3</strong></td>
+                                        <td>55</td>
+                                        <td><span class="badge badge-success">47</span></td>
+                                        <td><span class="badge badge-warning">6</span></td>
+                                        <td><span class="badge badge-danger">2</span></td>
+                                        <td>
+                                            <div class="progress-container">
+                                                <div class="progress-bar" style="width: 85.5%"></div>
+                                                <span class="progress-text">85.5%</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="action-buttons">
+                                                <button class="btn btn-primary btn-sm">
+                                                    <i class="fas fa-eye"></i>
+                                                </button>
+                                                <button class="btn btn-outline btn-sm">
+                                                    <i class="fas fa-edit"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Grade 4</strong></td>
+                                        <td>51</td>
+                                        <td><span class="badge badge-success">42</span></td>
+                                        <td><span class="badge badge-warning">7</span></td>
+                                        <td><span class="badge badge-danger">2</span></td>
+                                        <td>
+                                            <div class="progress-container">
+                                                <div class="progress-bar" style="width: 82.4%"></div>
+                                                <span class="progress-text">82.4%</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="action-buttons">
+                                                <button class="btn btn-primary btn-sm">
+                                                    <i class="fas fa-eye"></i>
+                                                </button>
+                                                <button class="btn btn-outline btn-sm">
+                                                    <i class="fas fa-edit"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Grade 5</strong></td>
+                                        <td>49</td>
+                                        <td><span class="badge badge-success">40</span></td>
+                                        <td><span class="badge badge-warning">6</span></td>
+                                        <td><span class="badge badge-danger">3</span></td>
+                                        <td>
+                                            <div class="progress-container">
+                                                <div class="progress-bar" style="width: 81.6%"></div>
+                                                <span class="progress-text">81.6%</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="action-buttons">
+                                                <button class="btn btn-primary btn-sm">
+                                                    <i class="fas fa-eye"></i>
+                                                </button>
+                                                <button class="btn btn-outline btn-sm">
+                                                    <i class="fas fa-edit"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Grade 6</strong></td>
+                                        <td>46</td>
+                                        <td><span class="badge badge-success">35</span></td>
+                                        <td><span class="badge badge-warning">8</span></td>
+                                        <td><span class="badge badge-danger">3</span></td>
+                                        <td>
+                                            <div class="progress-container">
+                                                <div class="progress-bar" style="width: 76.1%"></div>
+                                                <span class="progress-text">76.1%</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="action-buttons">
+                                                <button class="btn btn-primary btn-sm">
+                                                    <i class="fas fa-eye"></i>
+                                                </button>
+                                                <button class="btn btn-outline btn-sm">
+                                                    <i class="fas fa-edit"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Grade 7</strong></td>
+                                        <td>44</td>
+                                        <td><span class="badge badge-success">34</span></td>
+                                        <td><span class="badge badge-warning">7</span></td>
+                                        <td><span class="badge badge-danger">3</span></td>
+                                        <td>
+                                            <div class="progress-container">
+                                                <div class="progress-bar" style="width: 77.3%"></div>
+                                                <span class="progress-text">77.3%</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="action-buttons">
+                                                <button class="btn btn-primary btn-sm">
+                                                    <i class="fas fa-eye"></i>
+                                                </button>
+                                                <button class="btn btn-outline btn-sm">
+                                                    <i class="fas fa-edit"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Grade 8</strong></td>
+                                        <td>42</td>
+                                        <td><span class="badge badge-success">31</span></td>
+                                        <td><span class="badge badge-warning">8</span></td>
+                                        <td><span class="badge badge-danger">3</span></td>
+                                        <td>
+                                            <div class="progress-container">
+                                                <div class="progress-bar" style="width: 73.8%"></div>
+                                                <span class="progress-text">73.8%</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="action-buttons">
+                                                <button class="btn btn-primary btn-sm">
+                                                    <i class="fas fa-eye"></i>
+                                                </button>
+                                                <button class="btn btn-outline btn-sm">
+                                                    <i class="fas fa-edit"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- System Status & Recent Activity -->
+                <div class="dashboard-grid">
+                    <!-- System Status -->
+                    <div class="card">
+                        <div class="card-header">
+                            <div>
+                                <h2 class="card-title">System Status</h2>
+                                <p class="card-subtitle">Current academic period and alerts</p>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <h4 class="status-title">Current Academic Period</h4>
+                                <div class="status-badges">
+                                    <span class="badge badge-primary">Academic Year 2024</span>
+                                    <span class="badge badge-warning">Term 1</span>
+                                </div>
+                            </div>
+                            
+                            <div class="alerts-container">
+                                <div class="alert alert-warning">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                    15 students have outstanding balances over KSh 5,000
+                                </div>
+                                
+                                <div class="alert alert-success">
+                                    <i class="fas fa-check-circle"></i>
+                                    All academic years and terms are properly configured
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Recent Activity -->
+                    <div class="card">
+                        <div class="card-header">
+                            <div>
+                                <h2 class="card-title">Recent Activity</h2>
+                                <p class="card-subtitle">Latest system activities</p>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="activity-list">
+                                <div class="activity-item">
+                                    <div class="activity-icon success">
+                                        <i class="fas fa-credit-card"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <div class="activity-title">Payment Received</div>
+                                        <div class="activity-description">John Doe - KSh 15,000</div>
+                                        <div class="activity-time">2 minutes ago</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="activity-item">
+                                    <div class="activity-icon primary">
+                                        <i class="fas fa-user-plus"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <div class="activity-title">New Student Registered</div>
+                                        <div class="activity-description">Mary Smith - Grade 5</div>
+                                        <div class="activity-time">15 minutes ago</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="activity-item">
+                                    <div class="activity-icon warning">
+                                        <i class="fas fa-edit"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <div class="activity-title">Fee Structure Updated</div>
+                                        <div class="activity-description">Grade 6 Term 2 fees modified</div>
+                                        <div class="activity-time">1 hour ago</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="assets/js/modern-main.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+</body>
+</html>

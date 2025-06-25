@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fee Categories - Mwalimu School Management System</title>
+    <link rel="stylesheet" href="css/modern-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Modern Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">M</div>
+                <div>
+                    <div class="sidebar-title">Mwalimu</div>
+                    <div class="sidebar-subtitle">School Management</div>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Main</div>
+                    <div class="nav-item">
+                        <a href="index.html" class="nav-link">
+                            <i class="fas fa-chart-pie nav-icon"></i>
+                            Dashboard
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">Academic Management</div>
+                    <div class="nav-item">
+                        <a href="academic-year.html" class="nav-link">
+                            <i class="fas fa-calendar-alt nav-icon"></i>
+                            Academic Years
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="terms.html" class="nav-link">
+                            <i class="fas fa-clock nav-icon"></i>
+                            Terms Management
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">Student Management</div>
+                    <div class="nav-item">
+                        <a href="student-registration.html" class="nav-link">
+                            <i class="fas fa-user-plus nav-icon"></i>
+                            Register Student
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="student-search.html" class="nav-link">
+                            <i class="fas fa-search nav-icon"></i>
+                            Find Student
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="student-profile.html" class="nav-link">
+                            <i class="fas fa-id-card nav-icon"></i>
+                            Student Profiles
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="enrollment-edit.html" class="nav-link">
+                            <i class="fas fa-edit nav-icon"></i>
+                            Edit Enrollment
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">Fee Management</div>
+                    <div class="nav-item">
+                        <a href="fee-categories.html" class="nav-link active">
+                            <i class="fas fa-tags nav-icon"></i>
+                            Fee Categories
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="fee-structure.html" class="nav-link">
+                            <i class="fas fa-money-bill-wave nav-icon"></i>
+                            Fee Structure
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="payments.html" class="nav-link">
+                            <i class="fas fa-credit-card nav-icon"></i>
+                            Process Payments
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="payment-edit.html" class="nav-link">
+                            <i class="fas fa-receipt nav-icon"></i>
+                            Edit Payments
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">Reports & Analytics</div>
+                    <div class="nav-item">
+                        <a href="reports.html" class="nav-link">
+                            <i class="fas fa-chart-bar nav-icon"></i>
+                            Financial Reports
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="analytics.html" class="nav-link">
+                            <i class="fas fa-analytics nav-icon"></i>
+                            Analytics
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">System</div>
+                    <div class="nav-item">
+                        <a href="settings.html" class="nav-link">
+                            <i class="fas fa-cog nav-icon"></i>
+                            Settings
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content" id="mainContent">
+            <!-- Modern Header -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="sidebar-toggle" id="sidebarToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div>
+                        <h1 class="page-title">Fee Categories</h1>
+                        <div class="breadcrumb">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                            <i class="fas fa-chevron-right"></i>
+                            <span>Fee Management</span>
+                            <i class="fas fa-chevron-right"></i>
+                            <span>Categories</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="header-actions">
+                        <button class="btn btn-primary" id="addCategoryBtn">
+                            <i class="fas fa-plus"></i>
+                            Add Category
+                        </button>
+                    </div>
+                    <div class="user-menu">
+                        <div class="user-avatar">AD</div>
+                        <div class="user-info">
+                            <h4>Admin User</h4>
+                            <p>System Administrator</p>
+                        </div>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Content -->
+            <div class="content">
+                <!-- Category Overview -->
+                <div class="stats-grid fade-in-up">
+                    <div class="stat-card">
+                        <div class="stat-icon primary">
+                            <i class="fas fa-tags"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="totalCategories">8</h3>
+                            <p>Total Categories</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon warning">
+                            <i class="fas fa-exclamation-circle"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="compulsoryCategories">5</h3>
+                            <p>Compulsory Fees</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon success">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="optionalCategories">3</h3>
+                            <p>Optional Fees</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon danger">
+                            <i class="fas fa-pause-circle"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="inactiveCategories">0</h3>
+                            <p>Inactive Categories</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Add Multiple Categories Form -->
+                <div class="card mb-4 slide-in-right">
+                    <div class="card-header">
+                        <div>
+                            <h2 class="card-title">Add Fee Categories</h2>
+                            <p class="card-subtitle">Use the formset below to add multiple fee categories at once</p>
+                        </div>
+                        <button class="btn btn-outline btn-sm" id="toggleFormBtn">
+                            <i class="fas fa-eye-slash"></i>
+                            Hide Form
+                        </button>
+                    </div>
+                    <div class="card-body" id="categoryFormContainer">
+                        <form id="categoryFormset">
+                            <div id="categoryFormsets">
+                                <!-- Dynamic formsets will be added here -->
+                            </div>
+                            
+                            <div class="d-flex gap-2 justify-content-between" style="margin-top: 2rem;">
+                                <button type="button" class="btn btn-outline" id="addFormsetBtn">
+                                    <i class="fas fa-plus"></i>
+                                    Add Another Category
+                                </button>
+                                <div class="d-flex gap-2">
+                                    <button type="button" class="btn btn-secondary" id="clearFormBtn">
+                                        <i class="fas fa-trash"></i>
+                                        Clear All
+                                    </button>
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fas fa-save"></i>
+                                        Save Categories
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Existing Categories -->
+                <div class="card fade-in-up">
+                    <div class="card-header">
+                        <div>
+                            <h2 class="card-title">Existing Fee Categories</h2>
+                            <p class="card-subtitle">Manage and edit existing fee categories</p>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <input type="text" class="form-control" placeholder="Search categories..." id="searchCategories" style="width: 250px;">
+                            <button class="btn btn-outline btn-sm">
+                                <i class="fas fa-download"></i>
+                                Export
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-container">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Category Name</th>
+                                        <th>Type</th>
+                                        <th>Description</th>
+                                        <th>Status</th>
+                                        <th>Created Date</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="categoriesTable">
+                                    <!-- Data will be populated by JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="assets/js/modern-main.js"></script>
+    <script src="js/fee-categories.js"></script>
+</body>
+</html>

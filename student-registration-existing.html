@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Existing Student Registration - Mwalimu School Management System</title>
+    <link rel="stylesheet" href="css/modern-style.css">
+    <link rel="stylesheet" href="css/student-registration.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Modern Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">M</div>
+                <div>
+                    <div class="sidebar-title">Mwalimu</div>
+                    <div class="sidebar-subtitle">School Management</div>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Main</div>
+                    <div class="nav-item">
+                        <a href="index.html" class="nav-link">
+                            <i class="fas fa-chart-pie nav-icon"></i>
+                            Dashboard
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">Student Management</div>
+                    <div class="nav-item">
+                        <a href="student-registration-type.html" class="nav-link active">
+                            <i class="fas fa-user-plus nav-icon"></i>
+                            Register Student
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content" id="mainContent">
+            <!-- Modern Header -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="sidebar-toggle" id="sidebarToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div>
+                        <h1 class="page-title">Existing Student Registration</h1>
+                        <div class="breadcrumb">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                            <i class="fas fa-chevron-right"></i>
+                            <span>Students</span>
+                            <i class="fas fa-chevron-right"></i>
+                            <span>Existing Registration</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="header-actions">
+                        <button class="btn btn-outline" onclick="window.location.href='student-registration-type.html'">
+                            <i class="fas fa-arrow-left"></i>
+                            Back to Selection
+                        </button>
+                    </div>
+                    <div class="user-menu">
+                        <div class="user-avatar">AD</div>
+                        <div class="user-info">
+                            <h4>Admin User</h4>
+                            <p>System Administrator</p>
+                        </div>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Content -->
+            <div class="content">
+                <!-- Registration Info -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <div>
+                            <h2 class="card-title">Existing Student Registration</h2>
+                            <p class="card-subtitle">Register a student who was already in the school before the system</p>
+                        </div>
+                        <div class="registration-type-badge">
+                            <span class="badge badge-secondary">
+                                <i class="fas fa-user-edit"></i>
+                                Existing Student
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="info-alert">
+                            <div class="alert-icon">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div class="alert-content">
+                                <strong>Admission Number:</strong> Must be entered manually for existing students. 
+                                Please use the student's current admission number from their records.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Registration Form -->
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <h2 class="card-title">Student Information</h2>
+                            <p class="card-subtitle">Fill in all required information below</p>
+                        </div>
+                        <div class="form-progress">
+                            <span class="badge badge-warning">Step 1 of 1</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <form id="existingStudentForm">
+                            <!-- Admission Number Section -->
+                            <div class="form-section">
+                                <h3 class="form-section-title">
+                                    <i class="fas fa-id-badge"></i>
+                                    Admission Information
+                                </h3>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label" for="admissionNumber">
+                                            <i class="fas fa-id-badge"></i>
+                                            Admission Number *
+                                        </label>
+                                        <input type="text" class="form-control" id="admissionNumber" name="admissionNumber" required placeholder="e.g., CV200">
+                                        <small class="form-help">Enter the student's existing admission number</small>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="form-label" for="yearJoined">
+                                            <i class="fas fa-calendar"></i>
+                                            Year Joined School *
+                                        </label>
+                                        <select class="form-control" id="yearJoined" name="yearJoined" required>
+                                            <option value="">Select Year</option>
+                                            <option value="2024">2024</option>
+                                            <option value="2023">2023</option>
+                                            <option value="2022">2022</option>
+                                            <option value="2021">2021</option>
+                                            <option value="2020">2020</option>
+                                            <option value="2019">2019</option>
+                                            <option value="2018">2018</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Student Personal Information -->
+                            <div class="form-section">
+                                <h3 class="form-section-title">
+                                    <i class="fas fa-user"></i>
+                                    Personal Information
+                                </h3>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label" for="firstName">
+                                            <i class="fas fa-user"></i>
+                                            First Name *
+                                        </label>
+                                        <input type="text" class="form-control" id="firstName" name="firstName" required placeholder="Enter first name">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="form-label" for="lastName">
+                                            <i class="fas fa-user"></i>
+                                            Last Name *
+                                        </label>
+                                        <input type="text" class="form-control" id="lastName" name="lastName" required placeholder="Enter last name">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label" for="dateOfBirth">
+                                            <i class="fas fa-calendar"></i>
+                                            Date of Birth *
+                                        </label>
+                                        <input type="date" class="form-control" id="dateOfBirth" name="dateOfBirth" required>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="form-label" for="gender">
+                                            <i class="fas fa-venus-mars"></i>
+                                            Gender *
+                                        </label>
+                                        <select class="form-control" id="gender" name="gender" required>
+                                            <option value="">Select Gender</option>
+                                            <option value="Male">Male</option>
+                                            <option value="Female">Female</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Current Academic Information -->
+                            <div class="form-section">
+                                <h3 class="form-section-title">
+                                    <i class="fas fa-graduation-cap"></i>
+                                    Current Academic Information
+                                </h3>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label" for="currentGrade">
+                                            <i class="fas fa-layer-group"></i>
+                                            Current Grade *
+                                        </label>
+                                        <select class="form-control" id="currentGrade" name="currentGrade" required>
+                                            <option value="">Select Current Grade</option>
+                                            <option value="Grade 1">Grade 1</option>
+                                            <option value="Grade 2">Grade 2</option>
+                                            <option value="Grade 3">Grade 3</option>
+                                            <option value="Grade 4">Grade 4</option>
+                                            <option value="Grade 5">Grade 5</option>
+                                            <option value="Grade 6">Grade 6</option>
+                                            <option value="Grade 7">Grade 7</option>
+                                            <option value="Grade 8">Grade 8</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="form-label" for="academicYear">
+                                            <i class="fas fa-calendar-alt"></i>
+                                            Academic Year *
+                                        </label>
+                                        <select class="form-control" id="academicYear" name="academicYear" required>
+                                            <option value="">Select Academic Year</option>
+                                            <option value="2024" selected>2024</option>
+                                            <option value="2025">2025</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label" for="term">
+                                            <i class="fas fa-clock"></i>
+                                            Current Term *
+                                        </label>
+                                        <select class="form-control" id="term" name="term" required>
+                                            <option value="">Select Term</option>
+                                            <option value="Term 1" selected>Term 1</option>
+                                            <option value="Term 2">Term 2</option>
+                                            <option value="Term 3">Term 3</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="form-label" for="previousSchool">
+                                            <i class="fas fa-school"></i>
+                                            Previous School
+                                        </label>
+                                        <input type="text" class="form-control" id="previousSchool" name="previousSchool" placeholder="Enter previous school (if any)">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Guardian Information -->
+                            <div class="form-section">
+                                <h3 class="form-section-title">
+                                    <i class="fas fa-users"></i>
+                                    Guardian Information
+                                </h3>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label" for="guardianName">
+                                            <i class="fas fa-user-tie"></i>
+                                            Guardian Name *
+                                        </label>
+                                        <input type="text" class="form-control" id="guardianName" name="guardianName" required placeholder="Enter guardian's full name">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="form-label" for="guardianPhone">
+                                            <i class="fas fa-phone"></i>
+                                            Guardian Phone *
+                                        </label>
+                                        <input type="tel" class="form-control" id="guardianPhone" name="guardianPhone" required placeholder="e.g., 0712345678">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label" for="guardianEmail">
+                                            <i class="fas fa-envelope"></i>
+                                            Guardian Email
+                                        </label>
+                                        <input type="email" class="form-control" id="guardianEmail" name="guardianEmail" placeholder="guardian@example.com (optional)">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="form-label" for="relationship">
+                                            <i class="fas fa-heart"></i>
+                                            Relationship *
+                                        </label>
+                                        <select class="form-control" id="relationship" name="relationship" required>
+                                            <option value="">Select Relationship</option>
+                                            <option value="Father">Father</option>
+                                            <option value="Mother">Mother</option>
+                                            <option value="Guardian">Guardian</option>
+                                            <option value="Grandparent">Grandparent</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label" for="guardianAddress">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            Guardian Address
+                                        </label>
+                                        <textarea class="form-control" id="guardianAddress" name="guardianAddress" rows="3" placeholder="Enter guardian's address (optional)"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Form Actions -->
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-outline" onclick="window.location.href='student-registration-type.html'">
+                                    <i class="fas fa-arrow-left"></i>
+                                    Back
+                                </button>
+                                <div class="action-buttons">
+                                    <button type="button" class="btn btn-secondary" id="saveAsDraftBtn">
+                                        <i class="fas fa-save"></i>
+                                        Save as Draft
+                                    </button>
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fas fa-user-edit"></i>
+                                        Register Student
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Success Modal -->
+    <div class="modal-overlay" id="successModal" style="display: none;">
+        <div class="modal-container">
+            <div class="modal-header">
+                <div class="modal-icon success">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h3>Registration Successful!</h3>
+            </div>
+            <div class="modal-body">
+                <div class="success-details">
+                    <p>Existing student has been successfully registered in the system.</p>
+                    <div class="admission-number">
+                        <label>Admission Number:</label>
+                        <span id="confirmedAdmissionNumber">CV200</span>
+                    </div>
+                    <div class="student-details">
+                        <label>Student Name:</label>
+                        <span id="registeredStudentName">Jane Smith</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" onclick="registerAnother()">
+                    <i class="fas fa-plus"></i>
+                    Register Another
+                </button>
+                <button class="btn btn-primary" onclick="viewProfile()">
+                    <i class="fas fa-user"></i>
+                    View Profile
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="assets/js/modern-main.js"></script>
+    <script src="assets/js/student-registration-existing.js"></script>
+</body>
+</html>

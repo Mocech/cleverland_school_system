@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile - Mwalimu School Management System</title>
+    <link rel="stylesheet" href="css/modern-style.css">
+    <link rel="stylesheet" href="css/student-profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Modern Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">M</div>
+                <div>
+                    <div class="sidebar-title">Mwalimu</div>
+                    <div class="sidebar-subtitle">School Management</div>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Main</div>
+                    <div class="nav-item">
+                        <a href="index.html" class="nav-link">
+                            <i class="fas fa-chart-pie nav-icon"></i>
+                            Dashboard
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">Student Management</div>
+                    <div class="nav-item">
+                        <a href="student-registration-type.html" class="nav-link">
+                            <i class="fas fa-user-plus nav-icon"></i>
+                            Register Student
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="student-search.html" class="nav-link">
+                            <i class="fas fa-search nav-icon"></i>
+                            Find Student
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="student-profile.html" class="nav-link active">
+                            <i class="fas fa-id-card nav-icon"></i>
+                            Student Profile
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content" id="mainContent">
+            <!-- Modern Header -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="sidebar-toggle" id="sidebarToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div>
+                        <h1 class="page-title">Student Profile</h1>
+                        <div class="breadcrumb">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                            <i class="fas fa-chevron-right"></i>
+                            <span>Students</span>
+                            <i class="fas fa-chevron-right"></i>
+                            <span>Profile</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="header-actions">
+                        <button class="btn btn-outline">
+                            <i class="fas fa-print"></i>
+                            Print Profile
+                        </button>
+                        <button class="btn btn-primary" onclick="window.location.href='student-edit.html'">
+                            <i class="fas fa-edit"></i>
+                            Edit Profile
+                        </button>
+                    </div>
+                    <div class="user-menu">
+                        <div class="user-avatar">AD</div>
+                        <div class="user-info">
+                            <h4>Admin User</h4>
+                            <p>System Administrator</p>
+                        </div>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Content -->
+            <div class="content">
+                <!-- Student Header -->
+                <div class="student-header">
+                    <div class="student-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="student-info">
+                        <h2>John Doe</h2>
+                        <p class="admission-number">Admission No: CV001</p>
+                        <div class="student-badges">
+                            <span class="badge badge-success">Active</span>
+                            <span class="badge badge-primary">Grade 5</span>
+                            <span class="badge badge-warning">Term 1 - 2024</span>
+                        </div>
+                    </div>
+                    <div class="quick-actions">
+                        <button class="btn btn-success" onclick="window.location.href='payments.html'">
+                            <i class="fas fa-credit-card"></i>
+                            Make Payment
+                        </button>
+                        <button class="btn btn-outline">
+                            <i class="fas fa-history"></i>
+                            Payment History
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Profile Content -->
+                <div class="profile-grid">
+                    <!-- Personal Details -->
+                    <div class="card">
+                        <div class="card-header">
+                            <div>
+                                <h3 class="card-title">Personal Details</h3>
+                                <p class="card-subtitle">Student personal information</p>
+                            </div>
+                            <button class="btn btn-outline btn-sm">
+                                <i class="fas fa-edit"></i>
+                                Edit
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <div class="detail-grid">
+                                <div class="detail-item">
+                                    <label>Full Name</label>
+                                    <span>John Doe</span>
+                                </div>
+                                <div class="detail-item">
+                                    <label>Date of Birth</label>
+                                    <span>15th March 2014</span>
+                                </div>
+                                <div class="detail-item">
+                                    <label>Gender</label>
+                                    <span>Male</span>
+                                </div>
+                                <div class="detail-item">
+                                    <label>Age</label>
+                                    <span>10 years</span>
+                                </div>
+                                <div class="detail-item">
+                                    <label>Admission Number</label>
+                                    <span>CV001</span>
+                                </div>
+                                <div class="detail-item">
+                                    <label>Year Joined</label>
+                                    <span>2020</span>
+                                </div>
+                                <div class="detail-item">
+                                    <label>Current Grade</label>
+                                    <span>Grade 5</span>
+                                </div>
+                                <div class="detail-item">
+                                    <label>Status</label>
+                                    <span class="badge badge-success">Active</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Guardian Information -->
+                    <div class="card">
+                        <div class="card-header">
+                            <div>
+                                <h3 class="card-title">Guardian Information</h3>
+                                <p class="card-subtitle">Parent/Guardian contact details</p>
+                            </div>
+                            <button class="btn btn-outline btn-sm">
+                                <i class="fas fa-edit"></i>
+                                Edit
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <div class="detail-grid">
+                                <div class="detail-item">
+                                    <label>Guardian Name</label>
+                                    <span>Mary Doe</span>
+                                </div>
+                                <div class="detail-item">
+                                    <label>Relationship</label>
+                                    <span>Mother</span>
+                                </div>
+                                <div class="detail-item">
+                                    <label>Phone Number</label>
+                                    <span>0712345678</span>
+                                </div>
+                                <div class="detail-item">
+                                    <label>Email Address</label>
+                                    <span>mary.doe@email.com</span>
+                                </div>
+                                <div class="detail-item full-width">
+                                    <label>Address</label>
+                                    <span>123 Main Street, Nairobi, Kenya</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Financial Details -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <div>
+                            <h3 class="card-title">Financial Details</h3>
+                            <p class="card-subtitle">Current term fee structure and payment status</p>
+                        </div>
+                        <div class="financial-summary">
+                            <div class="summary-item">
+                                <span class="summary-label">Total Fees:</span>
+                                <span class="summary-value">KSh 25,000</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">Paid:</span>
+                                <span class="summary-value success">KSh 20,000</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">Balance:</span>
+                                <span class="summary-value danger">KSh 5,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-container">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Fee Category</th>
+                                        <th>Type</th>
+                                        <th>Amount Due</th>
+                                        <th>Amount Paid</th>
+                                        <th>Balance</th>
+                                        <th>Status</th>
+                                        <th>Last Payment</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Tuition Fee</strong></td>
+                                        <td><span class="badge badge-warning">Compulsory</span></td>
+                                        <td>KSh 15,000</td>
+                                        <td>KSh 15,000</td>
+                                        <td>KSh 0</td>
+                                        <td><span class="badge badge-success">Paid</span></td>
+                                        <td>15th Jan 2024</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Activity Fee</strong></td>
+                                        <td><span class="badge badge-warning">Compulsory</span></td>
+                                        <td>KSh 3,000</td>
+                                        <td>KSh 3,000</td>
+                                        <td>KSh 0</td>
+                                        <td><span class="badge badge-success">Paid</span></td>
+                                        <td>15th Jan 2024</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Lunch Fee</strong></td>
+                                        <td><span class="badge badge-primary">Optional</span></td>
+                                        <td>KSh 5,000</td>
+                                        <td>KSh 2,000</td>
+                                        <td>KSh 3,000</td>
+                                        <td><span class="badge badge-warning">Partial</span></td>
+                                        <td>20th Jan 2024</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Transport Fee</strong></td>
+                                        <td><span class="badge badge-primary">Optional</span></td>
+                                        <td>KSh 2,000</td>
+                                        <td>KSh 0</td>
+                                        <td>KSh 2,000</td>
+                                        <td><span class="badge badge-danger">Unpaid</span></td>
+                                        <td>-</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="payment-actions">
+                            <button class="btn btn-success" onclick="window.location.href='payments.html'">
+                                <i class="fas fa-credit-card"></i>
+                                Make Payment
+                            </button>
+                            <button class="btn btn-outline">
+                                <i class="fas fa-history"></i>
+                                View Payment History
+                            </button>
+                            <button class="btn btn-outline">
+                                <i class="fas fa-print"></i>
+                                Print Statement
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Academic History -->
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <h3 class="card-title">Academic History</h3>
+                            <p class="card-subtitle">Student's academic progression</p>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="academic-timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-marker current">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h4>Grade 5 - 2024</h4>
+                                    <p>Current Grade - Term 1</p>
+                                    <span class="timeline-status current">Current</span>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-marker completed">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h4>Grade 4 - 2023</h4>
+                                    <p>Successfully completed all terms</p>
+                                    <span class="timeline-status completed">Completed</span>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-marker completed">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h4>Grade 3 - 2022</h4>
+                                    <p>Successfully completed all terms</p>
+                                    <span class="timeline-status completed">Completed</span>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-marker completed">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h4>Grade 2 - 2021</h4>
+                                    <p>Successfully completed all terms</p>
+                                    <span class="timeline-status completed">Completed</span>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-marker completed">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h4>Grade 1 - 2020</h4>
+                                    <p>First year at the school</p>
+                                    <span class="timeline-status completed">Completed</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="assets/js/modern-main.js"></script>
+    <script src="assets/js/student-profile.js"></script>
+</body>
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms Management - Mwalimu School Management System</title>
+    <link rel="stylesheet" href="css/modern-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Modern Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">M</div>
+                <div>
+                    <div class="sidebar-title">Mwalimu</div>
+                    <div class="sidebar-subtitle">School Management</div>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Main</div>
+                    <div class="nav-item">
+                        <a href="index.html" class="nav-link">
+                            <i class="fas fa-chart-pie nav-icon"></i>
+                            Dashboard
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">Academic Management</div>
+                    <div class="nav-item">
+                        <a href="academic-year.html" class="nav-link">
+                            <i class="fas fa-calendar-alt nav-icon"></i>
+                            Academic Years
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="terms.html" class="nav-link active">
+                            <i class="fas fa-clock nav-icon"></i>
+                            Terms Management
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content" id="mainContent">
+            <!-- Modern Header -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="sidebar-toggle" id="sidebarToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div>
+                        <h1 class="page-title">Terms Management</h1>
+                        <div class="breadcrumb">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                            <i class="fas fa-chevron-right"></i>
+                            <span>Academic Management</span>
+                            <i class="fas fa-chevron-right"></i>
+                            <span>Terms</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="header-actions">
+                        <button class="btn btn-outline">
+                            <i class="fas fa-copy"></i>
+                            Copy from Previous Year
+                        </button>
+                        <button class="btn btn-primary" id="addTermBtn">
+                            <i class="fas fa-plus"></i>
+                            Add Term
+                        </button>
+                    </div>
+                    <div class="user-menu">
+                        <div class="user-avatar">AD</div>
+                        <div class="user-info">
+                            <h4>Admin User</h4>
+                            <p>System Administrator</p>
+                        </div>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Content -->
+            <div class="content">
+                <!-- Current Term -->
+                <div class="card mb-4 fade-in-up">
+                    <div class="card-header">
+                        <div>
+                            <h2 class="card-title">Current Term</h2>
+                            <p class="card-subtitle">Active term information and progress</p>
+                        </div>
+                        <button class="btn btn-outline btn-sm" id="changeActiveTermBtn">
+                            <i class="fas fa-edit"></i>
+                            Change Active
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+                            <div style="text-align: center; padding: 2rem; background: var(--primary-gradient); border-radius: var(--border-radius); color: white;">
+                                <i class="fas fa-clock" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.8;"></i>
+                                <h3 style="margin-bottom: 0.5rem;">Term 1</h3>
+                                <p style="opacity: 0.9; margin: 0;">January - April 2024</p>
+                            </div>
+                            
+                            <div style="text-align: center; padding: 2rem; background: var(--success-gradient); border-radius: var(--border-radius); color: white;">
+                                <i class="fas fa-calendar-check" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.8;"></i>
+                                <h3 style="margin-bottom: 0.5rem;">65 Days</h3>
+                                <p style="opacity: 0.9; margin: 0;">Total School Days</p>
+                            </div>
+                            
+                            <div style="text-align: center; padding: 2rem; background: var(--warning-gradient); border-radius: var(--border-radius); color: white;">
+                                <i class="fas fa-percentage" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.8;"></i>
+                                <h3 style="margin-bottom: 0.5rem;">45%</h3>
+                                <p style="opacity: 0.9; margin: 0;">Term Progress</p>
+                            </div>
+                            
+                            <div style="text-align: center; padding: 2rem; background: var(--danger-gradient); border-radius: var(--border-radius); color: white;">
+                                <i class="fas fa-calendar-times" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.8;"></i>
+                                <h3 style="margin-bottom: 0.5rem;">36 Days</h3>
+                                <p style="opacity: 0.9; margin: 0;">Days Remaining</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Add Term Form -->
+                <div class="card mb-4 slide-in-right" id="addTermCard" style="display: none;">
+                    <div class="card-header">
+                        <div>
+                            <h2 class="card-title">Add New Term</h2>
+                            <p class="card-subtitle">Create a new academic term</p>
+                        </div>
+                        <button class="btn btn-outline btn-sm" id="hideTermFormBtn">
+                            <i class="fas fa-times"></i>
+                            Hide Form
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <form id="termForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="academicYearSelect">
+                                        <i class="fas fa-calendar-alt"></i>
+                                        Academic Year *
+                                    </label>
+                                    <select class="form-control" id="academicYearSelect" name="academicYear" required>
+                                        <option value="">Select Academic Year</option>
+                                        <option value="2024" selected>2024</option>
+                                        <option value="2025">2025</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label" for="termName">
+                                        <i class="fas fa-clock"></i>
+                                        Term Name *
+                                    </label>
+                                    <select class="form-control" id="termName" name="termName" required>
+                                        <option value="">Select Term</option>
+                                        <option value="Term 1">Term 1</option>
+                                        <option value="Term 2">Term 2</option>
+                                        <option value="Term 3">Term 3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="termStartDate">
+                                        <i class="fas fa-play"></i>
+                                        Start Date *
+                                    </label>
+                                    <input type="date" class="form-control" id="termStartDate" name="startDate" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label" for="termEndDate">
+                                        <i class="fas fa-stop"></i>
+                                        End Date *
+                                    </label>
+                                    <input type="date" class="form-control" id="termEndDate" name="endDate" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="schoolDays">
+                                        <i class="fas fa-calendar-check"></i>
+                                        Total School Days
+                                    </label>
+                                    <input type="number" class="form-control" id="schoolDays" name="schoolDays" min="1" placeholder="Will be calculated automatically">
+                                    <small class="form-help">Leave blank to auto-calculate based on dates</small>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <div style="display: flex; align-items: center; gap: 1rem; margin-top: 2rem;">
+                                        <input type="checkbox" id="isActiveTerm" name="isActive" style="width: auto;">
+                                        <label for="isActiveTerm" class="form-label" style="margin: 0;">
+                                            <i class="fas fa-toggle-on"></i>
+                                            Set as Active Term
+                                        </label>
+                                    </div>
+                                    <small class="form-help">Only one term can be active at a time</small>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="termDescription">
+                                        <i class="fas fa-align-left"></i>
+                                        Description
+                                    </label>
+                                    <textarea class="form-control" id="termDescription" name="description" rows="3" placeholder="Optional description for this term"></textarea>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex gap-2 justify-content-between" style="margin-top: 2rem;">
+                                <button type="button" class="btn btn-outline" id="cancelTermBtn">
+                                    <i class="fas fa-times"></i>
+                                    Cancel
+                                </button>
+                                <div class="d-flex gap-2">
+                                    <button type="button" class="btn btn-secondary" id="saveAsDraftTermBtn">
+                                        <i class="fas fa-save"></i>
+                                        Save as Draft
+                                    </button>
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fas fa-plus"></i>
+                                        Create Term
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Terms List -->
+                <div class="card fade-in-up">
+                    <div class="card-header">
+                        <div>
+                            <h2 class="card-title">Academic Terms</h2>
+                            <p class="card-subtitle">Manage academic terms across different years</p>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <select class="form-control" id="yearFilter" style="width: 150px;">
+                                <option value="">All Years</option>
+                                <option value="2024" selected>2024</option>
+                                <option value="2025">2025</option>
+                            </select>
+                            <button class="btn btn-outline btn-sm">
+                                <i class="fas fa-download"></i>
+                                Export
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-container">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Term</th>
+                                        <th>Academic Year</th>
+                                        <th>Duration</th>
+                                        <th>School Days</th>
+                                        <th>Status</th>
+                                        <th>Progress</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="termsTable">
+                                    <!-- Data will be populated by JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="assets/js/modern-main.js"></script>
+    <script src="assets/js/terms.js"></script>
+</body>
+</html>

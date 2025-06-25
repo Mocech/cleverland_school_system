@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Payment - Mwalimu School Management System</title>
+    <link rel="stylesheet" href="css/modern-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Modern Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">M</div>
+                <div>
+                    <div class="sidebar-title">Mwalimu</div>
+                    <div class="sidebar-subtitle">School Management</div>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Main</div>
+                    <div class="nav-item">
+                        <a href="index.html" class="nav-link">
+                            <i class="fas fa-chart-pie nav-icon"></i>
+                            Dashboard
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">Fee Management</div>
+                    <div class="nav-item">
+                        <a href="payments.html" class="nav-link">
+                            <i class="fas fa-credit-card nav-icon"></i>
+                            Process Payments
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="payment-edit.html" class="nav-link active">
+                            <i class="fas fa-receipt nav-icon"></i>
+                            Edit Payments
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content" id="mainContent">
+            <!-- Modern Header -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="sidebar-toggle" id="sidebarToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div>
+                        <h1 class="page-title">Edit Payment</h1>
+                        <div class="breadcrumb">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                            <i class="fas fa-chevron-right"></i>
+                            <span>Fee Management</span>
+                            <i class="fas fa-chevron-right"></i>
+                            <span>Edit Payment</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="header-actions">
+                        <button class="btn btn-outline">
+                            <i class="fas fa-print"></i>
+                            Print Receipt
+                        </button>
+                        <button class="btn btn-secondary">
+                            <i class="fas fa-history"></i>
+                            Payment History
+                        </button>
+                    </div>
+                    <div class="user-menu">
+                        <div class="user-avatar">AD</div>
+                        <div class="user-info">
+                            <h4>Admin User</h4>
+                            <p>System Administrator</p>
+                        </div>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Content -->
+            <div class="content">
+                <!-- Search Payment -->
+                <div class="card mb-4 fade-in-up">
+                    <div class="card-header">
+                        <div>
+                            <h2 class="card-title">Find Payment to Edit</h2>
+                            <p class="card-subtitle">Search by receipt number, student admission number, or student name</p>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <i class="fas fa-receipt"></i>
+                                    Receipt Number
+                                </label>
+                                <input type="text" class="form-control" id="receiptSearch" placeholder="Enter receipt number (e.g., RCP240101001)">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <i class="fas fa-id-badge"></i>
+                                    Admission Number
+                                </label>
+                                <input type="text" class="form-control" id="admissionSearch" placeholder="Enter admission number (e.g., CV001)">
+                            </div>
+                            
+                            <div class="form-group" style="display: flex; align-items: end;">
+                                <button type="button" class="btn btn-primary" id="searchPaymentBtn">
+                                    <i class="fas fa-search"></i>
+                                    Search Payment
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Payment Details -->
+                <div class="card mb-4 slide-in-right" id="paymentDetailsCard" style="display: none;">
+                    <div class="card-header">
+                        <div>
+                            <h2 class="card-title">Payment Details</h2>
+                            <p class="card-subtitle">Review and edit payment information</p>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <span class="badge badge-success" id="paymentStatus">Completed</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <form id="paymentEditForm">
+                            <!-- Student Information (Read-only) -->
+                            <div class="form-section">
+                                <h3 class="form-section-title">
+                                    <i class="fas fa-user"></i>
+                                    Student Information
+                                </h3>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label">Student Name</label>
+                                        <input type="text" class="form-control" id="studentName" value="John Doe" readonly>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="form-label">Admission Number</label>
+                                        <input type="text" class="form-control" id="admissionNumber" value="CV001" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Payment Information -->
+                            <div class="form-section">
+                                <h3 class="form-section-title">
+                                    <i class="fas fa-credit-card"></i>
+                                    Payment Information
+                                </h3>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label" for="editReceiptNumber">
+                                            <i class="fas fa-receipt"></i>
+                                            Receipt Number *
+                                        </label>
+                                        <input type="text" class="form-control" id="editReceiptNumber" name="receiptNumber" value="RCP240101001" required>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="form-label" for="editPaymentAmount">
+                                            <i class="fas fa-money-bill-wave"></i>
+                                            Payment Amount *
+                                        </label>
+                                        <input type="number" class="form-control" id="editPaymentAmount" name="paymentAmount" value="15000" min="0" step="0.01" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label" for="editPaymentMethod">
+                                            <i class="fas fa-wallet"></i>
+                                            Payment Method *
+                                        </label>
+                                        <select class="form-control" id="editPaymentMethod" name="paymentMethod" required>
+                                            <option value="">Select Payment Method</option>
+                                            <option value="Cash" selected>Cash</option>
+                                            <option value="M-Pesa">M-Pesa</option>
+                                            <option value="Bank Transfer">Bank Transfer</option>
+                                            <option value="Cheque">Cheque</option>
+                                            <option value="Card">Debit/Credit Card</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="form-label" for="editPaymentDate">
+                                            <i class="fas fa-calendar"></i>
+                                            Payment Date *
+                                        </label>
+                                        <input type="date" class="form-control" id="editPaymentDate" name="paymentDate" value="2024-01-15" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label" for="editPaymentNotes">
+                                            <i class="fas fa-sticky-note"></i>
+                                            Payment Notes
+                                        </label>
+                                        <textarea class="form-control" id="editPaymentNotes" name="paymentNotes" rows="3">Full payment for Term 1 fees</textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Payment Categories -->
+                            <div class="form-section">
+                                <h3 class="form-section-title">
+                                    <i class="fas fa-list-check"></i>
+                                    Payment Breakdown
+                                </h3>
+                                <div class="table-container">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Fee Category</th>
+                                                <th>Amount Paid</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="paymentBreakdownTable">
+                                            <tr>
+                                                <td>Tuition Fee</td>
+                                                <td>
+                                                    <input type="number" class="form-control" value="10000" min="0" step="0.01">
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-danger btn-sm">
+                                                        <i class="fas fa-trash"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Library Fee</td>
+                                                <td>
+                                                    <input type="number" class="form-control" value="2000" min="0" step="0.01">
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-danger btn-sm">
+                                                        <i class="fas fa-trash"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Lab Fee</td>
+                                                <td>
+                                                    <input type="number" class="form-control" value="3000" min="0" step="0.01">
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-danger btn-sm">
+                                                        <i class="fas fa-trash"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            
+                            <!-- Form Actions -->
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-outline" id="cancelEditBtn">
+                                    <i class="fas fa-times"></i>
+                                    Cancel
+                                </button>
+                                <div class="action-buttons">
+                                    <button type="button" class="btn btn-danger" id="voidPaymentBtn">
+                                        <i class="fas fa-ban"></i>
+                                        Void Payment
+                                    </button>
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fas fa-save"></i>
+                                        Update Payment
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Recent Payments -->
+                <div class="card fade-in-up">
+                    <div class="card-header">
+                        <div>
+                            <h2 class="card-title">Recent Payments</h2>
+                            <p class="card-subtitle">Quick access to recent payment records</p>
+                        </div>
+                        <button class="btn btn-outline btn-sm">
+                            <i class="fas fa-download"></i>
+                            Export
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-container">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Receipt No.</th>
+                                        <th>Student</th>
+                                        <th>Amount</th>
+                                        <th>Method</th>
+                                        <th>Date</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="recentPaymentsTable">
+                                    <!-- Data will be populated by JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="assets/js/modern-main.js"></script>
+    <script src="assets/js/payment-edit.js"></script>
+</body>
+</html>

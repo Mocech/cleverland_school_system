@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Search - Mwalimu School Management System</title>
+    <link rel="stylesheet" href="css/modern-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Modern Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">M</div>
+                <div>
+                    <div class="sidebar-title">Mwalimu</div>
+                    <div class="sidebar-subtitle">School Management</div>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Main</div>
+                    <div class="nav-item">
+                        <a href="index.html" class="nav-link">
+                            <i class="fas fa-chart-pie nav-icon"></i>
+                            Dashboard
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">Academic Management</div>
+                    <div class="nav-item">
+                        <a href="academic-year.html" class="nav-link">
+                            <i class="fas fa-calendar-alt nav-icon"></i>
+                            Academic Years
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="terms.html" class="nav-link">
+                            <i class="fas fa-clock nav-icon"></i>
+                            Terms Management
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">Student Management</div>
+                    <div class="nav-item">
+                        <a href="student-registration.html" class="nav-link">
+                            <i class="fas fa-user-plus nav-icon"></i>
+                            Register Student
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="student-search.html" class="nav-link active">
+                            <i class="fas fa-search nav-icon"></i>
+                            Find Student
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="student-profile.html" class="nav-link">
+                            <i class="fas fa-id-card nav-icon"></i>
+                            Student Profiles
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="enrollment-edit.html" class="nav-link">
+                            <i class="fas fa-edit nav-icon"></i>
+                            Edit Enrollment
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">Fee Management</div>
+                    <div class="nav-item">
+                        <a href="fee-categories.html" class="nav-link">
+                            <i class="fas fa-tags nav-icon"></i>
+                            Fee Categories
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="fee-structure.html" class="nav-link">
+                            <i class="fas fa-money-bill-wave nav-icon"></i>
+                            Fee Structure
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="payments.html" class="nav-link">
+                            <i class="fas fa-credit-card nav-icon"></i>
+                            Process Payments
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="payment-edit.html" class="nav-link">
+                            <i class="fas fa-receipt nav-icon"></i>
+                            Edit Payments
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">Reports & Analytics</div>
+                    <div class="nav-item">
+                        <a href="reports.html" class="nav-link">
+                            <i class="fas fa-chart-bar nav-icon"></i>
+                            Financial Reports
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="analytics.html" class="nav-link">
+                            <i class="fas fa-analytics nav-icon"></i>
+                            Analytics
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">System</div>
+                    <div class="nav-item">
+                        <a href="settings.html" class="nav-link">
+                            <i class="fas fa-cog nav-icon"></i>
+                            Settings
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content" id="mainContent">
+            <!-- Modern Header -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="sidebar-toggle" id="sidebarToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div>
+                        <h1 class="page-title">Student Search</h1>
+                        <div class="breadcrumb">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                            <i class="fas fa-chevron-right"></i>
+                            <span>Students</span>
+                            <i class="fas fa-chevron-right"></i>
+                            <span>Search</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="header-actions">
+                        <button class="btn btn-outline">
+                            <i class="fas fa-download"></i>
+                            Export Results
+                        </button>
+                        <button class="btn btn-primary">
+                            <i class="fas fa-user-plus"></i>
+                            Add New Student
+                        </button>
+                    </div>
+                    <div class="user-menu">
+                        <div class="user-avatar">AD</div>
+                        <div class="user-info">
+                            <h4>Admin User</h4>
+                            <p>System Administrator</p>
+                        </div>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Content -->
+            <div class="content">
+                <!-- Search Filters -->
+                <div class="card mb-4 fade-in-up">
+                    <div class="card-header">
+                        <div>
+                            <h2 class="card-title">Search Students</h2>
+                            <p class="card-subtitle">Use filters below to find students</p>
+                        </div>
+                        <button class="btn btn-outline btn-sm" id="toggleFiltersBtn">
+                            <i class="fas fa-filter"></i>
+                            Advanced Filters
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <!-- Basic Search -->
+                        <div class="form-row mb-3">
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <i class="fas fa-search"></i>
+                                    Quick Search
+                                </label>
+                                <input type="text" class="form-control" id="quickSearch" placeholder="Search by name, admission number, or phone...">
+                            </div>
+                            
+                            <div class="form-group" style="display: flex; align-items: end;">
+                                <button type="button" class="btn btn-primary" id="quickSearchBtn">
+                                    <i class="fas fa-search"></i>
+                                    Search
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Advanced Filters -->
+                        <div id="advancedFilters" style="display: none;">
+                            <hr style="margin: 2rem 0;">
+                            <h4 style="margin-bottom: 1.5rem; color: var(--text-primary);">
+                                <i class="fas fa-sliders-h"></i>
+                                Advanced Filters
+                            </h4>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">
+                                        <i class="fas fa-id-badge"></i>
+                                        Admission Number
+                                    </label>
+                                    <input type="text" class="form-control" id="admissionFilter" placeholder="e.g., CV001">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label">
+                                        <i class="fas fa-user"></i>
+                                        First Name
+                                    </label>
+                                    <input type="text" class="form-control" id="firstNameFilter" placeholder="Student's first name">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label">
+                                        <i class="fas fa-user"></i>
+                                        Last Name
+                                    </label>
+                                    <input type="text" class="form-control" id="lastNameFilter" placeholder="Student's last name">
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">
+                                        <i class="fas fa-layer-group"></i>
+                                        Grade
+                                    </label>
+                                    <select class="form-control" id="gradeFilter">
+                                        <option value="">All Grades</option>
+                                        <option value="Grade 1">Grade 1</option>
+                                        <option value="Grade 2">Grade 2</option>
+                                        <option value="Grade 3">Grade 3</option>
+                                        <option value="Grade 4">Grade 4</option>
+                                        <option value="Grade 5">Grade 5</option>
+                                        <option value="Grade 6">Grade 6</option>
+                                        <option value="Grade 7">Grade 7</option>
+                                        <option value="Grade 8">Grade 8</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label">
+                                        <i class="fas fa-venus-mars"></i>
+                                        Gender
+                                    </label>
+                                    <select class="form-control" id="genderFilter">
+                                        <option value="">All Genders</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label">
+                                        <i class="fas fa-toggle-on"></i>
+                                        Status
+                                    </label>
+                                    <select class="form-control" id="statusFilter">
+                                        <option value="">All Status</option>
+                                        <option value="Active">Active</option>
+                                        <option value="Inactive">Inactive</option>
+                                        <option value="Transferred">Transferred</option>
+                                        <option value="Graduated">Graduated</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">
+                                        <i class="fas fa-phone"></i>
+                                        Guardian Phone
+                                    </label>
+                                    <input type="text" class="form-control" id="guardianPhoneFilter" placeholder="Guardian's phone number">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label">
+                                        <i class="fas fa-calendar-alt"></i>
+                                        Academic Year
+                                    </label>
+                                    <select class="form-control" id="academicYearFilter">
+                                        <option value="">All Years</option>
+                                        <option value="2024">2024</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2022">2022</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex gap-2 justify-content-end" style="margin-top: 2rem;">
+                                <button type="button" class="btn btn-outline" id="clearFiltersBtn">
+                                    <i class="fas fa-times"></i>
+                                    Clear Filters
+                                </button>
+                                <button type="button" class="btn btn-primary" id="applyFiltersBtn">
+                                    <i class="fas fa-filter"></i>
+                                    Apply Filters
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Search Results -->
+                <div class="card slide-in-right">
+                    <div class="card-header">
+                        <div>
+                            <h2 class="card-title">Search Results</h2>
+                            <p class="card-subtitle" id="resultsSubtitle">Showing all students</p>
+                        </div>
+                        <div class="d-flex gap-2 align-items-center">
+                            <span class="badge badge-primary" id="resultsCount">0 students found</span>
+                            <select class="form-control" id="sortBy" style="width: 150px;">
+                                <option value="name">Sort by Name</option>
+                                <option value="admission">Sort by Admission</option>
+                                <option value="grade">Sort by Grade</option>
+                                <option value="date">Sort by Date</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-container">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Student</th>
+                                        <th>Admission No.</th>
+                                        <th>Grade</th>
+                                        <th>Guardian</th>
+                                        <th>Contact</th>
+                                        <th>Status</th>
+                                        <th>Fee Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="studentsTable">
+                                    <!-- Search results will be populated here -->
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <!-- Pagination -->
+                        <div class="d-flex justify-content-between align-items-center" style="margin-top: 2rem;">
+                            <div style="color: var(--text-secondary);">
+                                Showing <span id="showingFrom">1</span> to <span id="showingTo">10</span> of <span id="totalResults">0</span> results
+                            </div>
+                            <div class="d-flex gap-1" id="pagination">
+                                <!-- Pagination buttons will be generated here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="assets/js/modern-main.js"></script>
+    <script src="assets/js/student-search.js"></script>
+</body>
+</html>

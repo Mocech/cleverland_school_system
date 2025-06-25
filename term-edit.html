@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Term - Mwalimu School Management System</title>
+    <link rel="stylesheet" href="css/modern-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Modern Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">M</div>
+                <div>
+                    <div class="sidebar-title">Mwalimu</div>
+                    <div class="sidebar-subtitle">School Management</div>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Academic Management</div>
+                    <div class="nav-item">
+                        <a href="terms.html" class="nav-link">
+                            <i class="fas fa-clock nav-icon"></i>
+                            Terms Management
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="term-edit.html" class="nav-link active">
+                            <i class="fas fa-edit nav-icon"></i>
+                            Edit Term
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content" id="mainContent">
+            <!-- Modern Header -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="sidebar-toggle" id="sidebarToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div>
+                        <h1 class="page-title">Edit Term</h1>
+                        <div class="breadcrumb">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                            <i class="fas fa-chevron-right"></i>
+                            <span>Academic Management</span>
+                            <i class="fas fa-chevron-right"></i>
+                            <span>Edit Term</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="header-actions">
+                        <button class="btn btn-outline">
+                            <i class="fas fa-history"></i>
+                            View History
+                        </button>
+                        <button class="btn btn-danger">
+                            <i class="fas fa-trash"></i>
+                            Delete Term
+                        </button>
+                    </div>
+                    <div class="user-menu">
+                        <div class="user-avatar">AD</div>
+                        <div class="user-info">
+                            <h4>Admin User</h4>
+                            <p>System Administrator</p>
+                        </div>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Content -->
+            <div class="content">
+                <!-- Current Term Info -->
+                <div class="card mb-4 fade-in-up">
+                    <div class="card-header">
+                        <div>
+                            <h2 class="card-title">Current Term Information</h2>
+                            <p class="card-subtitle">Term 1 - Academic Year 2024</p>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <span class="badge badge-success">Active</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+                            <div style="text-align: center; padding: 1.5rem; background: var(--primary-gradient); border-radius: var(--border-radius); color: white;">
+                                <i class="fas fa-calendar-alt" style="font-size: 2rem; margin-bottom: 1rem; opacity: 0.8;"></i>
+                                <h4 style="margin-bottom: 0.5rem;">65 Days</h4>
+                                <p style="opacity: 0.9; margin: 0;">Total School Days</p>
+                            </div>
+                            
+                            <div style="text-align: center; padding: 1.5rem; background: var(--success-gradient); border-radius: var(--border-radius); color: white;">
+                                <i class="fas fa-clock" style="font-size: 2rem; margin-bottom: 1rem; opacity: 0.8;"></i>
+                                <h4 style="margin-bottom: 0.5rem;">29 Days</h4>
+                                <p style="opacity: 0.9; margin: 0;">Days Elapsed</p>
+                            </div>
+                            
+                            <div style="text-align: center; padding: 1.5rem; background: var(--warning-gradient); border-radius: var(--border-radius); color: white;">
+                                <i class="fas fa-calendar-times" style="font-size: 2rem; margin-bottom: 1rem; opacity: 0.8;"></i>
+                                <h4 style="margin-bottom: 0.5rem;">36 Days</h4>
+                                <p style="opacity: 0.9; margin: 0;">Days Remaining</p>
+                            </div>
+                            
+                            <div style="text-align: center; padding: 1.5rem; background: var(--danger-gradient); border-radius: var(--border-radius); color: white;">
+                                <i class="fas fa-percentage" style="font-size: 2rem; margin-bottom: 1rem; opacity: 0.8;"></i>
+                                <h4 style="margin-bottom: 0.5rem;">45%</h4>
+                                <p style="opacity: 0.9; margin: 0;">Progress</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Edit Term Form -->
+                <div class="card slide-in-right">
+                    <div class="card-header">
+                        <div>
+                            <h2 class="card-title">Edit Term Details</h2>
+                            <p class="card-subtitle">Modify term information and settings</p>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <form id="editTermForm">
+                            <div class="form-section">
+                                <h3 class="form-section-title">
+                                    <i class="fas fa-clock"></i>
+                                    Basic Information
+                                </h3>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label" for="editAcademicYear">
+                                            <i class="fas fa-calendar-alt"></i>
+                                            Academic Year *
+                                        </label>
+                                        <select class="form-control" id="editAcademicYear" name="academicYear" required>
+                                            <option value="2024" selected>2024</option>
+                                            <option value="2025">2025</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="form-label" for="editTermName">
+                                            <i class="fas fa-clock"></i>
+                                            Term Name *
+                                        </label>
+                                        <select class="form-control" id="editTermName" name="termName" required>
+                                            <option value="Term 1" selected>Term 1</option>
+                                            <option value="Term 2">Term 2</option>
+                                            <option value="Term 3">Term 3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label" for="editStartDate">
+                                            <i class="fas fa-play"></i>
+                                            Start Date *
+                                        </label>
+                                        <input type="date" class="form-control" id="editStartDate" name="startDate" value="2024-01-15" required>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="form-label" for="editEndDate">
+                                            <i class="fas fa-stop"></i>
+                                            End Date *
+                                        </label>
+                                        <input type="date" class="form-control" id="editEndDate" name="endDate" value="2024-04-12" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label" for="editSchoolDays">
+                                            <i class="fas fa-calendar-check"></i>
+                                            Total School Days
+                                        </label>
+                                        <input type="number" class="form-control" id="editSchoolDays" name="schoolDays" value="65" min="1">
+                                        <small class="form-help">Leave blank to auto-calculate based on dates</small>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <div style="display: flex; align-items: center; gap: 1rem; margin-top: 2rem;">
+                                            <input type="checkbox" id="editIsActive" name="isActive" checked style="width: auto;">
+                                            <label for="editIsActive" class="form-label" style="margin: 0;">
+                                                <i class="fas fa-toggle-on"></i>
+                                                Active Term
+                                            </label>
+                                        </div>
+                                        <small class="form-help">Only one term can be active at a time</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label" for="editDescription">
+                                            <i class="fas fa-align-left"></i>
+                                            Description
+                                        </label>
+                                        <textarea class="form-control" id="editDescription" name="description" rows="3">First term of academic year 2024. Focus on foundational subjects and student orientation.</textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Form Actions -->
+                            <div class="d-flex gap-2 justify-content-between" style="margin-top: 3rem;">
+                                <button type="button" class="btn btn-outline" onclick="history.back()">
+                                    <i class="fas fa-arrow-left"></i>
+                                    Back to Terms
+                                </button>
+                                <div class="d-flex gap-2">
+                                    <button type="button" class="btn btn-secondary">
+                                        <i class="fas fa-save"></i>
+                                        Save as Draft
+                                    </button>
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fas fa-check"></i>
+                                        Update Term
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="assets/js/modern-main.js"></script>
+    <script src="assets/js/term-edit.js"></script>
+</body>
+</html>

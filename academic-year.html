@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Years - Mwalimu School Management System</title>
+    <link rel="stylesheet" href="css/modern-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Modern Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">M</div>
+                <div>
+                    <div class="sidebar-title">Mwalimu</div>
+                    <div class="sidebar-subtitle">School Management</div>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Main</div>
+                    <div class="nav-item">
+                        <a href="index.html" class="nav-link">
+                            <i class="fas fa-chart-pie nav-icon"></i>
+                            Dashboard
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">Academic Management</div>
+                    <div class="nav-item">
+                        <a href="academic-year.html" class="nav-link active">
+                            <i class="fas fa-calendar-alt nav-icon"></i>
+                            Academic Years
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="terms.html" class="nav-link">
+                            <i class="fas fa-clock nav-icon"></i>
+                            Terms Management
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">Student Management</div>
+                    <div class="nav-item">
+                        <a href="student-registration.html" class="nav-link">
+                            <i class="fas fa-user-plus nav-icon"></i>
+                            Register Student
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="student-search.html" class="nav-link">
+                            <i class="fas fa-search nav-icon"></i>
+                            Find Student
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="student-profile.html" class="nav-link">
+                            <i class="fas fa-id-card nav-icon"></i>
+                            Student Profiles
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="enrollment-edit.html" class="nav-link">
+                            <i class="fas fa-edit nav-icon"></i>
+                            Edit Enrollment
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">Fee Management</div>
+                    <div class="nav-item">
+                        <a href="fee-categories.html" class="nav-link">
+                            <i class="fas fa-tags nav-icon"></i>
+                            Fee Categories
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="fee-structure.html" class="nav-link">
+                            <i class="fas fa-money-bill-wave nav-icon"></i>
+                            Fee Structure
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="payments.html" class="nav-link">
+                            <i class="fas fa-credit-card nav-icon"></i>
+                            Process Payments
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="payment-edit.html" class="nav-link">
+                            <i class="fas fa-receipt nav-icon"></i>
+                            Edit Payments
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">Reports & Analytics</div>
+                    <div class="nav-item">
+                        <a href="reports.html" class="nav-link">
+                            <i class="fas fa-chart-bar nav-icon"></i>
+                            Financial Reports
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="analytics.html" class="nav-link">
+                            <i class="fas fa-analytics nav-icon"></i>
+                            Analytics
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">System</div>
+                    <div class="nav-item">
+                        <a href="settings.html" class="nav-link">
+                            <i class="fas fa-cog nav-icon"></i>
+                            Settings
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content" id="mainContent">
+            <!-- Modern Header -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="sidebar-toggle" id="sidebarToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div>
+                        <h1 class="page-title">Academic Years</h1>
+                        <div class="breadcrumb">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                            <i class="fas fa-chevron-right"></i>
+                            <span>Academic Management</span>
+                            <i class="fas fa-chevron-right"></i>
+                            <span>Academic Years</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="header-actions">
+                        <button class="btn btn-outline">
+                            <i class="fas fa-history"></i>
+                            View History
+                        </button>
+                        <button class="btn btn-primary" id="addAcademicYearBtn">
+                            <i class="fas fa-plus"></i>
+                            Add Academic Year
+                        </button>
+                    </div>
+                    <div class="user-menu">
+                        <div class="user-avatar">AD</div>
+                        <div class="user-info">
+                            <h4>Admin User</h4>
+                            <p>System Administrator</p>
+                        </div>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Content -->
+            <div class="content">
+                <!-- Current Academic Period -->
+                <div class="card mb-4 fade-in-up">
+                    <div class="card-header">
+                        <div>
+                            <h2 class="card-title">Current Academic Period</h2>
+                            <p class="card-subtitle">Active academic year and term information</p>
+                        </div>
+                        <button class="btn btn-outline btn-sm" id="changeActiveBtn">
+                            <i class="fas fa-edit"></i>
+                            Change Active
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                            <div style="text-align: center; padding: 2rem; background: var(--primary-gradient); border-radius: var(--border-radius); color: white;">
+                                <i class="fas fa-calendar-alt" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.8;"></i>
+                                <h3 style="margin-bottom: 0.5rem;">Academic Year 2024</h3>
+                                <p style="opacity: 0.9; margin: 0;">January 15, 2024 - November 30, 2024</p>
+                            </div>
+                            
+                            <div style="text-align: center; padding: 2rem; background: var(--warning-gradient); border-radius: var(--border-radius); color: white;">
+                                <i class="fas fa-clock" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.8;"></i>
+                                <h3 style="margin-bottom: 0.5rem;">Term 1</h3>
+                                <p style="opacity: 0.9; margin: 0;">January 15, 2024 - April 12, 2024</p>
+                            </div>
+                            
+                            <div style="text-align: center; padding: 2rem; background: var(--success-gradient); border-radius: var(--border-radius); color: white;">
+                                <i class="fas fa-users" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.8;"></i>
+                                <h3 style="margin-bottom: 0.5rem;">1,247 Students</h3>
+                                <p style="opacity: 0.9; margin: 0;">Currently Enrolled</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Add Academic Year Form -->
+                <div class="card mb-4 slide-in-right" id="addYearCard" style="display: none;">
+                    <div class="card-header">
+                        <div>
+                            <h2 class="card-title">Add Academic Year</h2>
+                            <p class="card-subtitle">Create a new academic year with terms</p>
+                        </div>
+                        <button class="btn btn-outline btn-sm" id="hideFormBtn">
+                            <i class="fas fa-times"></i>
+                            Hide Form
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <form id="academicYearForm">
+                            <div class="form-section">
+                                <h3 class="form-section-title">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    Academic Year Details
+                                </h3>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label">
+                                            <i class="fas fa-calendar"></i>
+                                            Academic Year *
+                                        </label>
+                                        <input type="number" class="form-control" id="yearValue" name="year" required min="2020" max="2030" placeholder="e.g., 2025">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="form-label">
+                                            <i class="fas fa-play"></i>
+                                            Start Date *
+                                        </label>
+                                        <input type="date" class="form-control" id="startDate" name="startDate" required>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="form-label">
+                                            <i class="fas fa-stop"></i>
+                                            End Date *
+                                        </label>
+                                        <input type="date" class="form-control" id="endDate" name="endDate" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label">
+                                            <i class="fas fa-align-left"></i>
+                                            Description
+                                        </label>
+                                        <textarea class="form-control" id="description" name="description" rows="3" placeholder="Optional description for this academic year"></textarea>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <div style="display: flex; align-items: center; gap: 1rem;">
+                                            <input type="checkbox" id="isActive" name="isActive" style="width: auto;">
+                                            <label for="isActive" class="form-label" style="margin: 0;">
+                                                <i class="fas fa-toggle-on"></i>
+                                                Set as Active Academic Year
+                                            </label>
+                                        </div>
+                                        <small style="color: var(--text-secondary); margin-top: 0.5rem; display: block;">
+                                            Only one academic year can be active at a time
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex gap-2 justify-content-between" style="margin-top: 2rem;">
+                                <button type="button" class="btn btn-outline" id="cancelYearBtn">
+                                    <i class="fas fa-times"></i>
+                                    Cancel
+                                </button>
+                                <div class="d-flex gap-2">
+                                    <button type="button" class="btn btn-secondary" id="saveAsDraftYearBtn">
+                                        <i class="fas fa-save"></i>
+                                        Save as Draft
+                                    </button>
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fas fa-plus"></i>
+                                        Create Academic Year
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Academic Years List -->
+                <div class="card fade-in-up">
+                    <div class="card-header">
+                        <div>
+                            <h2 class="card-title">Academic Years</h2>
+                            <p class="card-subtitle">Manage existing academic years and their terms</p>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <select class="form-control" id="statusFilter" style="width: 150px;">
+                                <option value="">All Status</option>
+                                <option value="Active">Active</option>
+                                <option value="Completed">Completed</option>
+                                <option value="Draft">Draft</option>
+                            </select>
+                            <button class="btn btn-outline btn-sm">
+                                <i class="fas fa-download"></i>
+                                Export
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-container">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Academic Year</th>
+                                        <th>Duration</th>
+                                        <th>Terms</th>
+                                        <th>Students</th>
+                                        <th>Status</th>
+                                        <th>Progress</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="academicYearsTable">
+                                    <!-- Data will be populated by JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="assets/js/modern-main.js"></script>
+    <script src="assets/js/academic-year.js"></script>
+</body>
+</html>
